@@ -1,0 +1,21 @@
+.widget{
+    border:2px solid #000;
+    border-radius: 25px;
+    max-width: 100%;
+    margin:0;
+}
+
+.widget a {
+    text-decoration: none;
+    color:#000;
+}
+
+.widget a:hover{
+    color: var(--rood);
+}
+
+.widget-title {
+    text-align: center;
+    color:#000;
+    text-decoration: none;
+}
