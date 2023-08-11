@@ -9,6 +9,7 @@
         height: 100px;
         width: 100%;
         background: var(--rood);
+        display: block;
     } 
     
     .pijl{
@@ -243,37 +244,37 @@
     .opleidingdiv {
         position: absolute;
         width: max-content;
-        margin-left:139px;
+        margin-left:137px;
     }
 
     .galerijdiv {
         position: absolute;
         width: max-content;
-        margin-left:289px;
+        margin-left:285px;
     }
 
     .supportdiv {
         position: absolute;
         width: max-content;
-        margin-left:401px;
+        margin-left:385px;
     }
 
     .agendadiv {
         position: absolute;
         width: max-content;
-        margin-left:550px;
+        margin-left:535px;
     }
 
     .nieuwsdiv {
         position: absolute;
         width: max-content;
-        margin-left:648px;
+        margin-left:644px;
     }
 
     .contactdiv {
         position: absolute;
         width: max-content;
-        margin-left:757px;
+        margin-left:751px;
     }
 
 
@@ -337,7 +338,6 @@
     .header .tabelnav .uitklapmenu {
         display: none;
         z-index: 99999;
-        padding-bottom:150px;
         overflow-y: auto;
     }
 
@@ -460,10 +460,4 @@
         padding:10px;
     }
 
-}
-
-@media screen and ( min-width: 650px) and (max-width: 1075px) {
-    .header .tabelnav .uitklapmenu {
-        padding-bottom:70px;
-    }
 }

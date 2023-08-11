@@ -12,3 +12,84 @@ Author: Sophia de Waard
     --blauw: #26306A;
 }
 
+body {
+    height: 100%;
+    margin:0;
+    padding:0;
+    border:0;
+}
+
+.site-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.site-content {
+    flex: 1;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+.grid-container {
+    top:-50px;
+    left:0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 10px; 
+    border:none;
+    font-family: var(--fonts);
+    grid-template-rows: auto;
+    
+}
+
+.column {
+    display: flex;
+    padding: 0 20px;
+    left:50%;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.schaling {
+    width: 100%;
+    height: 100%;
+}
+
+.sidebar1 {
+    border:2px solid #000;
+    border-radius: 25px;
+    height: fit-content;
+    position: absolute;
+}
+
+.site-content {
+    flex: 1; /* Neem de beschikbare ruimte in beslag en duw de footer naar beneden */
+    padding: 20px; /* Voorbeeld van padding, pas aan zoals nodig */
+}
+
+@media screen and ( min-width: 1075px) {
+    .grid-container {
+        margin-top: 100px;
+    }
+}
+
+@media screen and ( max-width: 1075px) {
+    .grid-container {
+        margin-top: 70px;
+    }
+}
+
+@media screen and (min-width: 650px) and ( max-width: 1075px) {
+    .grid-container {
+        margin-top: 70px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+}

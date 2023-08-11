@@ -18,16 +18,6 @@
     add_action('wp_enqueue_scripts', 'viostest_register_styles');
 
 
-    //Laadt javascript in 
-
-//HELP!!!!
-    function enqueue_custom_script() {
-        wp_enqueue_script('custom-script', get_template_directory_uri() . '/js/main.js', array('jquery'), null, true);
-    }
-    
-    add_action('wp_enqueue_scripts', 'enqueue_custom_script');
-
-
     //Laad je menus maken in wordpress zelf
     function viostest_menus(){
         $locations=array(
@@ -46,15 +36,273 @@
     //Maakt de sidebar
     function vios_register_sidebars() {
         register_sidebar(array(
-          'name' => __('Sidebar', 'viostest1'),
-          'id' => 'sidebar-1',
-          'description' => __('Deze sidebar wordt weergegeven aan de zijkant van de pagina.', 'viostest1'),
-          'before_widget' => '<div class="widget">',
-          'after_widget' => '</div>',
-          'before_title' => '<h2 class="widget-title">',
-          'after_title' => '</h2>',
+            'name' => __('Sidebar', 'viostest1'),
+            'id' => 'sidebar-1',
+            'description' => __('Dit is de rechter sidebar.', 'viostest1'),
+            'before_widget' => '<div class="widget1">',
+            'after_widget' => '</div>',
+            'before_title' => '<h2 class="widget-title1">',
+            'after_title' => '</h2>',
+        ));
+        register_sidebar(array(
+            'name' => __('SMB', 'viostest1'),
+            'id' => 'sidebar-2',
+            'description' => __('Dit is het linker widgetgebied voor logos.', 'viostest1'),
+            'before_widget' => '<div class="widget">',
+            'after_widget' => '</div>',
+            'before_title' => '<h2 class="widget-title">',
+            'after_title' => '</h2>',
+          ));
+        register_sidebar(array(
+            'name' => __('Dorst', 'viostest1'),
+            'id' => 'sidebar-3',
+            'description' => __('Dit is het middelste widgetgebied voor logos.', 'viostest1'),
+            'before_widget' => '<div class="widget">',
+            'after_widget' => '</div>',
+            'before_title' => '<h2 class="widget-title">',
+            'after_title' => '</h2>',
+        ));
+        register_sidebar(array(
+            'name' => __('TwirlPower', 'viostest1'),
+            'id' => 'sidebar-4',
+            'description' => __('Dit is het rechter widgetgebied voor logos.', 'viostest1'),
+            'before_widget' => '<div class="widget">',
+            'after_widget' => '</div>',
+            'before_title' => '<h2 class="widget-title">',
+            'after_title' => '</h2>',
+        ));
+        register_sidebar(array(
+            'name' => __('ABC', 'viostest1'),
+            'id' => 'sidebar-5',
+            'description' => __('Dit is het rechter widgetgebied voor logos.', 'viostest1'),
+            'before_widget' => '<div class="widget">',
+            'after_widget' => '</div>',
+            'before_title' => '<h2 class="widget-title">',
+            'after_title' => '</h2>',
+        ));
+        register_sidebar(array(
+            'name' => __('MPB', 'viostest1'),
+            'id' => 'sidebar-6',
+            'description' => __('Dit is het rechter widgetgebied voor logos.', 'viostest1'),
+            'before_widget' => '<div class="widget">',
+            'after_widget' => '</div>',
+            'before_title' => '<h2 class="widget-title">',
+            'after_title' => '</h2>',
+        ));
+        register_sidebar(array(
+            'name' => __('WWB', 'viostest1'),
+            'id' => 'sidebar-7',
+            'description' => __('Dit is het rechter widgetgebied voor logos.', 'viostest1'),
+            'before_widget' => '<div class="widget">',
+            'after_widget' => '</div>',
+            'before_title' => '<h2 class="widget-title">',
+            'after_title' => '</h2>',
         ));
       }
       add_action('widgets_init', 'vios_register_sidebars');
 
+    //Zorgt voor de shortcode om berichten op te halen met smb slug
+    function custom_latest_smb_post() {
+        $args = array(
+            'post_type' => 'post',
+            'posts_per_page' => 1,
+            'category_name' => 'smb',
+            'orderby' => 'date',
+            'order' => 'DESC'
+        );
+    
+        $query = new WP_Query($args);
+    
+        if ($query->have_posts()) {
+            while ($query->have_posts()) {
+                $query->the_post();
+                echo '<div class="latest-post">';
+                echo '<a href="' . get_permalink() . '" class="post-titel">' . get_the_title() . '</a>';
+                $aantalwoorden = wp_trim_words(get_the_excerpt(), 20);
+                echo '<div class="post-content">' . $aantalwoorden . '</div>';
+                echo '<a href="' . get_permalink() . '" class="read-more">Lees meer</a>';
+                echo '</div>';
+            }
+        }
+    
+        wp_reset_postdata();
+    }
+    
+    function custom_latest_smb_post_shortcode() {
+        ob_start();
+        custom_latest_smb_post();
+        return ob_get_clean();
+    }
+    add_shortcode('latest_smb_post', 'custom_latest_smb_post_shortcode');
+    
+    //Zorgt voor de shortcode om berichten op te halen met dorst slug
+    function custom_latest_dorst_post() {
+        $args = array(
+            'post_type' => 'post',
+            'posts_per_page' => 1,
+            'category_name' => 'dorst',
+            'orderby' => 'date',
+            'order' => 'DESC'
+        );
+    
+        $query = new WP_Query($args);
+    
+        if ($query->have_posts()) {
+            while ($query->have_posts()) {
+                $query->the_post();
+                echo '<div class="latest-post">';
+                echo '<a href="' . get_permalink() . '" class="post-titel">' . get_the_title() . '</a>';
+                $aantalwoorden = wp_trim_words(get_the_excerpt(), 20);
+                echo '<div class="post-content">' . $aantalwoorden . '</div>';
+                echo '<a href="' . get_permalink() . '" class="read-more">Lees meer</a>';
+                echo '</div>';
+            }
+        }
+    
+        wp_reset_postdata();
+    }
+    
+    function custom_latest_dorst_post_shortcode() {
+        ob_start();
+        custom_latest_dorst_post();
+        return ob_get_clean();
+    }
+    add_shortcode('latest_dorst_post', 'custom_latest_dorst_post_shortcode');
+    
+    //Zorgt voor de shortcode om berichten op te halen met twirlpower slug
+    function custom_latest_twirlpower_post() {
+        $args = array(
+            'post_type' => 'post',
+            'posts_per_page' => 1,
+            'category_name' => 'twirlpower',
+            'orderby' => 'date',
+            'order' => 'DESC'
+        );
+    
+        $query = new WP_Query($args);
+    
+        if ($query->have_posts()) {
+            while ($query->have_posts()) {
+                $query->the_post();
+                echo '<div class="latest-post">';
+                echo '<a href="' . get_permalink() . '" class="post-titel">' . get_the_title() . '</a>';
+                $aantalwoorden = wp_trim_words(get_the_excerpt(), 20);
+                echo '<div class="post-content">' . $aantalwoorden . '</div>';
+                echo '<a href="' . get_permalink() . '" class="read-more">Lees meer</a>';
+                echo '</div>';
+            }
+        }
+    
+        wp_reset_postdata();
+    }
+    
+    function custom_latest_twirlpower_post_shortcode() {
+        ob_start();
+        custom_latest_twirlpower_post();
+        return ob_get_clean();
+    }
+    add_shortcode('latest_twirlpower_post', 'custom_latest_twirlpower_post_shortcode');
+    
+    //Zorgt voor de shortcode om berichten op te halen met abc slug
+    function custom_latest_abc_post() {
+        $args = array(
+            'post_type' => 'post',
+            'posts_per_page' => 1,
+            'category_name' => 'abc',
+            'orderby' => 'date',
+            'order' => 'DESC'
+        );
+    
+        $query = new WP_Query($args);
+    
+        if ($query->have_posts()) {
+            while ($query->have_posts()) {
+                $query->the_post();
+                echo '<div class="latest-post">';
+                echo '<a href="' . get_permalink() . '" class="post-titel">' . get_the_title() . '</a>';
+                $aantalwoorden = wp_trim_words(get_the_excerpt(), 20);
+                echo '<div class="post-content">' . $aantalwoorden . '</div>';
+                echo '<a href="' . get_permalink() . '" class="read-more">Lees meer</a>';
+                echo '</div>';
+            }
+        }
+    
+        wp_reset_postdata();
+    }
+    
+    function custom_latest_abc_post_shortcode() {
+        ob_start();
+        custom_latest_abc_post();
+        return ob_get_clean();
+    }
+    add_shortcode('latest_abc_post', 'custom_latest_abc_post_shortcode');
+    
+    //Zorgt voor de shortcode om berichten op te halen met mpb slug
+    function custom_latest_mpb_post() {
+        $args = array(
+            'post_type' => 'post',
+            'posts_per_page' => 1,
+            'category_name' => 'mpb',
+            'orderby' => 'date',
+            'order' => 'DESC'
+        );
+    
+        $query = new WP_Query($args);
+    
+        if ($query->have_posts()) {
+            while ($query->have_posts()) {
+                $query->the_post();
+                echo '<div class="latest-post">';
+                echo '<a href="' . get_permalink() . '" class="post-titel">' . get_the_title() . '</a>';
+                $aantalwoorden = wp_trim_words(get_the_excerpt(), 20);
+                echo '<div class="post-content">' . $aantalwoorden . '</div>';
+                echo '<a href="' . get_permalink() . '" class="read-more">Lees meer</a>';
+                echo '</div>';
+            }
+        }
+    
+        wp_reset_postdata();
+    }
+    
+    function custom_latest_mpb_post_shortcode() {
+        ob_start();
+        custom_latest_mpb_post();
+        return ob_get_clean();
+    }
+    add_shortcode('latest_mpb_post', 'custom_latest_mpb_post_shortcode');
+    
+    //Zorgt voor de shortcode om berichten op te halen met wwb slug
+    function custom_latest_wwb_post() {
+        $args = array(
+            'post_type' => 'post',
+            'posts_per_page' => 1,
+            'category_name' => 'wwb',
+            'orderby' => 'date',
+            'order' => 'DESC'
+        );
+    
+        $query = new WP_Query($args);
+    
+        if ($query->have_posts()) {
+            while ($query->have_posts()) {
+                $query->the_post();
+                echo '<div class="latest-post">';
+                echo '<a href="' . get_permalink() . '" class="post-titel">' . get_the_title() . '</a>';
+                $aantalwoorden = wp_trim_words(get_the_excerpt(), 20);
+                echo '<div class="post-content">' . $aantalwoorden . '</div>';
+                echo '<a href="' . get_permalink() . '" class="read-more">Lees meer</a>';
+                echo '</div>';
+            }
+        }
+    
+        wp_reset_postdata();
+    }
+    
+    function custom_latest_wwb_post_shortcode() {
+        ob_start();
+        custom_latest_wwb_post();
+        return ob_get_clean();
+    }
+    add_shortcode('latest_wwb_post', 'custom_latest_wwb_post_shortcode');
+    
 ?>

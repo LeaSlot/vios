@@ -114,7 +114,7 @@
             klapmenuafdeling.style.display = '';
             var klapmenuafdeling = document.getElementById("contact2");
             klapmenuafdeling.style.display = '';
-            menuactiefafdelingen = false
+            menuactiefafdelingen = false;
         }
 
         window.addEventListener('resize', function() {
@@ -144,7 +144,7 @@
         <div class="tabelnav">
             <nav id="uitklapmenu1" class="uitklapmenu">
                 <div class="afdelingdiv">
-                    <button onclick = "afdelingenmobiel()" id= "buttonafdeling" class = "hoofditem">Afdelingen <span class = "pijl">&#11167;</span></button>
+                    <a onclick = "afdelingenmobiel()" id= "buttonafdeling" class = "hoofditem">Afdelingen <span class = "pijl">&#11167;</span></a>
                     <?php
                         wp_nav_menu(
                             array(
@@ -157,7 +157,7 @@
                     ?>
                 </div>
                 <div class="opleidingdiv">
-                    <button onclick = "opleidingenmobiel()" id="buttonopleiding" class = "hoofditem">Opleidingen <span class = "pijl">&#11167;</span></button>
+                    <a onclick = "opleidingenmobiel()" id="buttonopleiding" class = "hoofditem">Opleidingen <span class = "pijl">&#11167;</span></a>
                     <?php
                         wp_nav_menu(
                             array(
@@ -170,7 +170,7 @@
                     ?>
                 </div>
                 <div class="galerijdiv">
-                    <button onclick = "galerijmobiel()" id="buttongalerij" class = "hoofditem">Galerij <span class = "pijl">&#11167;</span></button>
+                    <a onclick = "galerijmobiel()" id="buttongalerij" class = "hoofditem">Galerij <span class = "pijl">&#11167;</span></a>
                     <?php
                         wp_nav_menu(
                             array(
@@ -189,7 +189,7 @@
                     <a href="/viostest/agenda" class="hoofditem">Agenda</a>
                 </div>
                 <div class ="nieuwsdiv">
-                    <button onclick = "nieuwsmobiel()" id="buttonnieuws" class = "hoofditem">Nieuws <span class = "pijl">&#11167;</span></button>
+                    <a onclick = "nieuwsmobiel()" id="buttonnieuws" class = "hoofditem">Nieuws <span class = "pijl">&#11167;</span></a>
                     <?php
                         wp_nav_menu(
                             array(
@@ -202,7 +202,7 @@
                     ?>
                 </div>
                 <div class = "contactdiv">
-                    <button onclick = "contactmobiel()" id="buttoncontact" class = "hoofditem">Contact <span class = "pijl">&#11167;</span></button>
+                    <a onclick = "contactmobiel()" id="buttoncontact" class = "hoofditem">Contact <span class = "pijl">&#11167;</span></a>
                     <?php
                         wp_nav_menu(
                             array(
