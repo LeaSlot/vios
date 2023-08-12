@@ -1,4 +1,14 @@
 @media screen and ( min-width: 650px) {
+    .sponsors {
+        height: fit-content;
+        background-color: #fff;
+        width: 100%;
+    }
+
+    .carousel-item {
+        position: inline;
+        width: fit-content;
+    }
 
     .footer {
         height: 70px;

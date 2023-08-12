@@ -32,6 +32,17 @@
     }
     add_action('init', 'viostest_menus');
 
+    //Maakt de slider in wordpress
+    function custom_carousel_item_post_type() {
+        register_post_type('carousel_item', array(
+            'label' => 'Carousel Items',
+            'public' => true,
+            'menu_icon' => 'dashicons-images-alt2',
+            'supports' => array('title', 'thumbnail'),
+        ));
+    }
+    add_action('init', 'custom_carousel_item_post_type');
+
 
     //Maakt de sidebar
     function vios_register_sidebars() {

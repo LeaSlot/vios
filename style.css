@@ -29,6 +29,7 @@ body {
     flex: 1;
     padding: 0;
     box-sizing: border-box;
+    width: auto;
   }
 
 .grid-container {
@@ -46,7 +47,16 @@ body {
 
 .column {
     display: flex;
-    padding: 0 20px;
+    padding: 0;
+    left:50%;
+    justify-content: center;
+    flex-direction: column;
+    padding-right:20px;
+}
+
+.columnsb {
+    display: flex;
+    padding-left:20px;
     left:50%;
     justify-content: center;
     flex-direction: column;
@@ -62,6 +72,7 @@ body {
     border-radius: 25px;
     height: fit-content;
     position: absolute;
+    margin-right: 20px;
 }
 
 .site-content {
@@ -89,7 +100,12 @@ body {
 
 @media screen and (max-width: 650px) {
     .grid-container {
-        grid-template-columns: 1fr 1fr;
+        display: block;
     }
+    
+    .columnsb {
+        display:none;
+    }
+
     
 }

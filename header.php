@@ -6,7 +6,6 @@
     <!-- Meta zorgt voor de responsiveness voor mobiel-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <?php
         wp_head();
     ?>
@@ -14,6 +13,7 @@
     
 
     <script>
+        
 
         let menuactief = false;
         let menuactiefafdelingen = false;
@@ -31,7 +31,7 @@
         }
 
         function afdelingenmobiel(){
-            if (window.innerWidth <= 950) {
+            if (window.innerWidth <= 1075) {
                 var klapmenuafdeling = document.getElementById("afdeling2");
                 if (menuactiefafdelingen == false){
                     klapmenuafdeling.style.display = 'block';
@@ -45,7 +45,7 @@
         }
 
         function opleidingenmobiel(){
-            if (window.innerWidth <= 950) {
+            if (window.innerWidth <= 1075) {
                 var klapmenuafdeling = document.getElementById("opleiding2");
                 if (menuactiefafdelingen == false){
                     klapmenuafdeling.style.display = 'block';
@@ -59,7 +59,7 @@
         }
 
         function galerijmobiel(){
-            if (window.innerWidth <= 950) {
+            if (window.innerWidth <= 1075) {
                 var klapmenuafdeling = document.getElementById("galerij2");
                 if (menuactiefafdelingen == false){
                     klapmenuafdeling.style.display = 'block';
@@ -73,7 +73,7 @@
         }
 
         function nieuwsmobiel(){
-            if (window.innerWidth <= 950) {
+            if (window.innerWidth <= 1075) {
                 var klapmenuafdeling = document.getElementById("nieuws2");
                 if (menuactiefafdelingen == false){
                     klapmenuafdeling.style.display = 'block';
@@ -87,7 +87,7 @@
         }
 
         function contactmobiel(){
-            if (window.innerWidth <= 950) {
+            if (window.innerWidth <= 1075) {
                 var klapmenuafdeling = document.getElementById("contact2");
                 if (menuactiefafdelingen == false){
                     klapmenuafdeling.style.display = 'block';
@@ -219,5 +219,6 @@
         
 
     </header>
+    
 </body>
 </html>

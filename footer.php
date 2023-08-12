@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <body>
-    <footer class="footer">
+    <div class="sponsors">
+        
+    </div>
+    <div class="footer">
         <?php
             wp_nav_menu(
                 array(
@@ -13,6 +17,7 @@
                 )
             );
         ?>
-    </footer>
+    </div>
+    
 </body>
 </html>
