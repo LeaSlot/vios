@@ -57,7 +57,7 @@
         ));
         register_sidebar(array(
             'name' => __('SMB', 'viostest1'),
-            'id' => 'sidebar-2',
+            'id' => 'smb',
             'description' => __('Dit is het linker widgetgebied voor logos.', 'viostest1'),
             'before_widget' => '<div class="widget">',
             'after_widget' => '</div>',
@@ -66,7 +66,7 @@
           ));
         register_sidebar(array(
             'name' => __('Dorst', 'viostest1'),
-            'id' => 'sidebar-3',
+            'id' => 'dorst',
             'description' => __('Dit is het middelste widgetgebied voor logos.', 'viostest1'),
             'before_widget' => '<div class="widget">',
             'after_widget' => '</div>',
@@ -75,7 +75,7 @@
         ));
         register_sidebar(array(
             'name' => __('TwirlPower', 'viostest1'),
-            'id' => 'sidebar-4',
+            'id' => 'twirlpower',
             'description' => __('Dit is het rechter widgetgebied voor logos.', 'viostest1'),
             'before_widget' => '<div class="widget">',
             'after_widget' => '</div>',
@@ -84,7 +84,7 @@
         ));
         register_sidebar(array(
             'name' => __('ABC', 'viostest1'),
-            'id' => 'sidebar-5',
+            'id' => 'abc',
             'description' => __('Dit is het rechter widgetgebied voor logos.', 'viostest1'),
             'before_widget' => '<div class="widget">',
             'after_widget' => '</div>',
@@ -93,7 +93,7 @@
         ));
         register_sidebar(array(
             'name' => __('MPB', 'viostest1'),
-            'id' => 'sidebar-6',
+            'id' => 'mpb',
             'description' => __('Dit is het rechter widgetgebied voor logos.', 'viostest1'),
             'before_widget' => '<div class="widget">',
             'after_widget' => '</div>',
@@ -102,8 +102,17 @@
         ));
         register_sidebar(array(
             'name' => __('WWB', 'viostest1'),
-            'id' => 'sidebar-7',
+            'id' => 'wwb',
             'description' => __('Dit is het rechter widgetgebied voor logos.', 'viostest1'),
+            'before_widget' => '<div class="widget">',
+            'after_widget' => '</div>',
+            'before_title' => '<h2 class="widget-title">',
+            'after_title' => '</h2>',
+        ));
+        register_sidebar(array(
+            'name' => __('footer', 'viostest1'),
+            'id' => 'sponsoren',
+            'description' => __('Dit widgetgebied voor de sponsoren.', 'viostest1'),
             'before_widget' => '<div class="widget">',
             'after_widget' => '</div>',
             'before_title' => '<h2 class="widget-title">',

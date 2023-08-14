@@ -9,7 +9,15 @@ Author: Sophia de Waard
 :root{
     --rood: #B0171A;
     --fonts: Arial, Helvetica, sans-serif;
-    --blauw: #26306A;
+    --blauw: rgb(34, 48, 109);
+    --lichtblauw: rgb(174, 184, 230);
+    --dorst: rgba(238, 0, 0, 0.4);
+    --smb: rgba(141, 56, 148, 0.4);
+    --twirlpower: rgba(143, 97, 206, 0.4);
+    --abc: rgb(189,234, 250);
+    --mpb:rgba(229, 36, 57, 0.4);
+    --wwb:rgba(17,99,5,0.4);
+
 }
 
 body {

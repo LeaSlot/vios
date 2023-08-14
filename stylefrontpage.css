@@ -42,9 +42,32 @@
 }
 
 .logos{
-    border:2px solid #000;
-    border-radius: 25px;
+    box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.2);
     width:100%;
+}
+
+.logossmb {
+    background: linear-gradient(to bottom, transparent 50%, var(--smb));
+}
+
+.logosdorst {
+    background: linear-gradient(to bottom, transparent 50%, var(--dorst));
+}
+
+.logostwirlpower {
+    background: linear-gradient(to bottom, transparent 50%, var(--twirlpower));
+}
+
+.logosabc {
+    background: linear-gradient(to bottom, transparent 50%, var(--abc));
+}
+
+.logosmpb {
+    background: linear-gradient(to bottom, transparent 50%, var(--mpb));
+}
+
+.logoswwb {
+    background: linear-gradient(to bottom, transparent 50%, var(--wwb));
 }
 
 .logos1{

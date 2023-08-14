@@ -4,7 +4,7 @@
 
 <body>
     <div class="sponsors">
-        
+        <?php dynamic_sidebar('sponsoren'); ?>
     </div>
     <div class="footer">
         <?php
