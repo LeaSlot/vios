@@ -1,14 +1,40 @@
-@media screen and ( min-width: 650px) {
-    .sponsors {
-        height: fit-content;
-        background-color: #fff;
-        width: 100%;
-    }
+.sponsors {
+    background-color: var(--blauw);
+    font-family: var(--fonts);
+    font-size:xx-large;
+    color:#fff;
+    text-align: center;
+    padding:10px;
+}
 
-    .carousel-item {
-        position: inline;
-        width: fit-content;
-    }
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%; /* Voeg een vaste breedte toe aan de container */
+  }
+  
+  .carousel {
+    display: flex;
+    transition: transform 1s ease-in-out;
+  }
+  
+  .carousel-item {
+    flex: 0 0 25%; /* Hierdoor worden vier items per keer weergegeven */
+    display: flex;
+    justify-content: center;
+  }
+
+  .carousel-item a {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+  }
+
+ 
+
+
+@media screen and ( min-width: 650px) {
 
     .footer {
         height: 70px;

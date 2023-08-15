@@ -13,6 +13,7 @@ Author: Sophia de Waard
     --lichtblauw: rgb(174, 184, 230);
     --dorst: rgba(238, 0, 0, 0.4);
     --smb: rgba(141, 56, 148, 0.4);
+    --smbvol: rgb(141, 56, 148);
     --twirlpower: rgba(143, 97, 206, 0.4);
     --abc: rgb(189,234, 250);
     --mpb:rgba(229, 36, 57, 0.4);
@@ -40,8 +41,11 @@ body {
     width: auto;
   }
 
+.sitecolor {
+    background: radial-gradient(ellipse at center, var(--smbvol) 0%, transparent 90%);
+}
+
 .grid-container {
-    top:-50px;
     left:0;
     width: 100%;
     display: grid;
@@ -50,10 +54,13 @@ body {
     border:none;
     font-family: var(--fonts);
     grid-template-rows: auto;
-    
+    padding-bottom: 40px;
+
 }
 
 .column {
+    margin-top:40px;
+    margin-left:40px;
     display: flex;
     padding: 0;
     left:50%;
@@ -62,7 +69,18 @@ body {
     padding-right:20px;
 }
 
+.columntext {
+    margin-top:40px;
+    display: flex;
+    left:50%;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 60px;
+
+}
+
 .columnsb {
+    margin-top: 40px;
     display: flex;
     padding-left:20px;
     left:50%;
@@ -80,29 +98,42 @@ body {
     border-radius: 25px;
     height: fit-content;
     position: absolute;
-    margin-right: 20px;
+    margin-right: 40px;
+    background-color:#fff;
 }
 
-.site-content {
-    flex: 1; /* Neem de beschikbare ruimte in beslag en duw de footer naar beneden */
-    padding: 20px; /* Voorbeeld van padding, pas aan zoals nodig */
+
+
+.tekst {
+    padding:20px;
+    background-color: #fff;
+    box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.2);
 }
+
+
 
 @media screen and ( min-width: 1075px) {
-    .grid-container {
-        margin-top: 100px;
+
+    .site-content {
+        margin-top:65px;
     }
 }
 
 @media screen and ( max-width: 1075px) {
-    .grid-container {
-        margin-top: 70px;
+    .site-content {
+        margin-top:10px;
     }
 }
 
-@media screen and (min-width: 650px) and ( max-width: 1075px) {
-    .grid-container {
-        margin-top: 70px;
+@media screen and (min-width: 850px) and ( max-width: 1075px) {
+    .site-content {
+        margin-top:35px;
+    }
+}
+
+@media screen and (min-width: 650px) and ( max-width: 850px) {
+    .site-content {
+        margin-top:20px;
     }
 }
 
@@ -115,5 +146,8 @@ body {
         display:none;
     }
 
+    .site-content {
+        margin-top:10px;
+    }
     
 }

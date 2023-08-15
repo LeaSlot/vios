@@ -32,6 +32,71 @@
     }
     add_action('init', 'viostest_menus');
 
+    
+
+    //Regelt de carousel
+    function create_custom_post_type() {
+        register_post_type('carousel_item',
+            array(
+                'labels' => array(
+                    'name' => __('Carousel Items'),
+                    'singular_name' => __('Carousel Item')
+                ),
+                'public' => true,
+                'has_archive' => false,
+                'supports' => array('title', 'thumbnail')
+            )
+        );
+    }
+    add_action('init', 'create_custom_post_type');
+
+    // Voeg aangepaste velden toe aan carousel-items
+    function custom_carousel_item_metabox() {
+        add_meta_box(
+            'custom_carousel_item_metabox', // Unieke id voor de metabox
+            'Link naar Externe Website', // Titel van de metabox
+            'display_custom_carousel_item_metabox', // Callback functie om de inhoud van de metabox weer te geven
+            'carousel_item', // Hier moet je het posttype van je carousel-items plaatsen
+            'normal', // Plaatsing van de metabox (normal, side, etc.)
+            'default' // Prioriteit van de metabox (default, high, low, etc.)
+        );
+    }
+
+    function display_custom_carousel_item_metabox($post) {
+        $external_link = get_post_meta($post->ID, 'external_link', true); // Hier plaats je de naam van het aangepaste veld
+        wp_nonce_field(basename(__FILE__), 'custom_carousel_item_nonce'); // Voeg nonce toe voor beveiliging
+        ?>
+        <label for="external_link">Link naar externe website:</label>
+        <input type="url" id="external_link" name="external_link" value="<?php echo esc_url($external_link); ?>">
+        <?php
+    }
+
+    function save_custom_carousel_item_metabox($post_id) {
+        if (!isset($_POST['custom_carousel_item_nonce']) || !wp_verify_nonce($_POST['custom_carousel_item_nonce'], basename(__FILE__))) {
+            return;
+        }
+
+        if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+            return;
+        }
+
+        if ('carousel_item' === get_post_type($post_id)) {
+            if (isset($_POST['external_link'])) {
+                update_post_meta($post_id, 'external_link', sanitize_text_field($_POST['external_link']));
+            }
+        }
+    }
+
+    add_action('add_meta_boxes', 'custom_carousel_item_metabox');
+    add_action('save_post', 'save_custom_carousel_item_metabox');
+
+
+    // Voeg categorieën toe aan pagina's
+    function add_categories_to_pages() {
+        register_taxonomy_for_object_type('category', 'page');
+    }
+    add_action('init', 'add_categories_to_pages');
+
     //Maakt de slider in wordpress
     function custom_carousel_item_post_type() {
         register_post_type('carousel_item', array(
