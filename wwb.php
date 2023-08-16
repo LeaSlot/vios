@@ -1,37 +1,38 @@
 <head>
-    <?php
-        /*
-        Template Name: smb
-        */
-        get_header();
-    ?>
+
+<?php
+/*
+Template Name: wwb
+*/
+get_header();
+?>
 
 
-    <script>
-        window.addEventListener('resize', function() {
-            const innerDiv = document.getElementsByClassName("sidebar1");
-            const outerDiv = document.getElementsByClassName('columnsb');
-            const midDiv = document.getElementsByClassName('schaling');
-            if (window.innerWidth >= 650) {
-                outerDiv[0].style.height = '';
-                innerDiv[0].style.width = '';
-            }
-            else if (window.innerWidth <= 650) {
+<script>
+    window.addEventListener('resize', function() {
+        const innerDiv = document.getElementsByClassName("sidebar1");
+        const outerDiv = document.getElementsByClassName('columnsb');
+        const midDiv = document.getElementsByClassName('schaling');
+        if (window.innerWidth >= 650) {
+            outerDiv[0].style.height = '';
+            innerDiv[0].style.width = '';
+        }
+        else if (window.innerWidth <= 650) {
 
-                // Pas de stijl van de buitenste div aan op basis van de hoogte van de binnenste div
-                outerDiv[0].style.height = innerDiv[0].clientHeight + 'px';
-                innerDiv[0].style.width = midDiv[0].clientWidth + 'px';
-                console.log('in if else');
-            }
-        });
-    </script>
-    
+            // Pas de stijl van de buitenste div aan op basis van de hoogte van de binnenste div
+            outerDiv[0].style.height = innerDiv[0].clientHeight + 'px';
+            innerDiv[0].style.width = midDiv[0].clientWidth + 'px';
+            console.log('in if else');
+        }
+    });
+</script>
+
 </head>
 
-<body <?php body_class('smb'); ?>>
+<body <?php body_class('wwb'); ?>>
 
 <div class ="site-wrapper">
-        <div class ="site-content sitecolorsmb">    
+        <div class ="site-content sitecolorwwb">    
             <div class="grid-container">
                 <div class="columntext">
                     <?php

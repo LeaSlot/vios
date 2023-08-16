@@ -14,6 +14,7 @@
         wp_enqueue_style('viostest-stylefooter', get_template_directory_uri(). "/stylefooter.css", array(), 1.0, 'all');
         wp_enqueue_style('viostest-stylesidebar', get_template_directory_uri(). "/stylesidebar.css", array(), 1.0, 'all');
         wp_enqueue_style('viostest-stylefrontpage', get_template_directory_uri(). "/stylefrontpage.css", array(), 1.0, 'all');
+        wp_enqueue_style('viostest-stylegalerij', get_template_directory_uri(). "/stylegalerij.css", array(), 1.0, 'all');
     }
     add_action('wp_enqueue_scripts', 'viostest_register_styles');
 
@@ -108,6 +109,30 @@
     }
     add_action('init', 'custom_carousel_item_post_type');
 
+
+    // Voeg een aangepast veld toe aan de categorie-editor voor CSS-class
+    function custom_category_css_class_field($tag) {
+        $custom_css_class = get_term_meta($tag->term_id, 'custom_css_class', true);
+        ?>
+        <tr class="form-field">
+            <th scope="row" valign="top"><label for="custom_css_class">Aangepaste CSS-klasse</label></th>
+            <td>
+                <input type="text" name="custom_css_class" id="custom_css_class" value="<?php echo esc_attr($custom_css_class); ?>">
+                <p class="description">Voer een aangepaste CSS-klasse in voor deze categorie.</p>
+            </td>
+        </tr>
+        <?php
+    }
+    add_action('category_edit_form_fields', 'custom_category_css_class_field');
+
+    // Sla de aangepaste CSS-klasse op
+    function save_custom_category_css_class($term_id) {
+        if (isset($_POST['custom_css_class'])) {
+            $custom_css_class = sanitize_text_field($_POST['custom_css_class']);
+            update_term_meta($term_id, 'custom_css_class', $custom_css_class);
+        }
+    }
+    add_action('edited_category', 'save_custom_category_css_class');
 
     //Maakt de sidebar
     function vios_register_sidebars() {
