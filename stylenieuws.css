@@ -1,0 +1,120 @@
+.columnnieuws {
+    margin-top:40px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 60px;
+    background:transparent;
+}
+
+.tekst .post-content .all-post .post-tekst a.post-title {
+    text-decoration: none;
+    color:#000;
+    font-weight: bold;
+    font-size:large;
+    display: block;
+}
+
+.tekst .post-content .all-post a.post-title:hover {
+    color:var(--rood);
+}
+
+.all-post {
+    display: flex; /* Gebruik flexbox voor de lay-out */
+    padding: 10px;
+    margin:20px 0;
+    box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
+    background-color: #fff;;
+}
+
+.individual-post {
+    display: flex; /* Gebruik flexbox voor de lay-out */
+    padding: 10px;
+    margin: 0;
+    box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
+    background-color: #fff;;
+    
+}
+
+.fulltext {
+    background-color: #fff;
+}
+
+.post-thumbnail {
+    flex-shrink: 0; /* Voorkom dat de thumbnail inkrimpt */
+    margin-right: 10px; /* Voeg wat ruimte toe tussen de thumbnail en de tekst */
+}
+
+.post-thumbnail img {
+    
+    border-radius: 5px;
+}
+
+.post-tekst  {
+    display: inline-block;
+}
+
+.columnnieuws .tekst {
+    color:#000;
+    background: transparent;
+    box-shadow:none;
+    padding:0;
+}
+
+.columnnieuws .tekst h2 {
+    margin:0;
+}
+
+.all-post .read-more {
+    text-decoration: none;
+    color:#000;
+    font-style: italic;
+}
+
+.all-post .read-more:hover{
+    color: var(--rood);
+}
+
+.pagination {
+    font-size: large;
+    text-align: center;
+    color:#000;
+}
+
+.pagination span {
+    padding:5px;
+    color:var(--rood);
+    font-weight: bold;
+}
+
+.pagination a{
+    text-decoration: none;
+    color:#000;
+    padding:5px;
+}
+
+
+/* Voor de single pagina*/
+    .category-smb {
+        background: radial-gradient(ellipse at center, var(--smbvol) 0%, transparent 90%);
+    }
+    
+    .category-dorst {
+        background: radial-gradient(ellipse at center, var(--dorstvol) 0%, transparent 90%);
+    }
+    
+    .category-twirlpower {
+        background: radial-gradient(ellipse at center, var(--twirlpowervol) 0%, transparent 90%);
+    }
+    
+    .category-colorabc {
+        background: radial-gradient(ellipse at center, var(--abc) 0%, transparent 90%);
+    }
+    
+    .category-mpb {
+        background: radial-gradient(ellipse at center, var(--mpbvol) 0%, transparent 90%);
+    }
+    
+    .category-wwb {
+        background: radial-gradient(ellipse at center, var(--wwbvol) 0%, transparent 90%);
+    }
