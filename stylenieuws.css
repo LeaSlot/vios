@@ -50,6 +50,17 @@
     border-radius: 5px;
 }
 
+.post-thumbnail-sidebar {
+    margin-right:40px;
+    height:auto;
+    padding-bottom: 20px;
+}
+
+.post-thumbnail-sidebar img {
+    width: 100%;
+    height: auto;
+}
+
 .post-tekst  {
     display: inline-block;
 }

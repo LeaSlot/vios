@@ -12,6 +12,7 @@
     position: relative;
     overflow: hidden;
     width: 100%; /* Voeg een vaste breedte toe aan de container */
+    background-color: #fff;
   }
   
   .carousel {

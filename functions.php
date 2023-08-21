@@ -202,6 +202,26 @@
         }
         add_action('widgets_init', 'vios_register_sidebars');
 
+    // Maakt de albums binnen wordpress aan
+        function custom_album_taxonomy() {
+            $labels = array(
+                'name' => 'Albums',
+                'singular_name' => 'Album',
+                'menu_name' => 'Albums',
+                // Voeg andere labels toe zoals 'add_new_item', 'edit_item', etc.
+            );
+        
+            $args = array(
+                'labels' => $labels,
+                'hierarchical' => true,
+                // Voeg andere argumenten toe zoals 'rewrite', 'show_ui', etc.
+            );
+        
+            register_taxonomy('album', array('attachment'), $args);
+        }
+        
+        add_action('init', 'custom_album_taxonomy');
+        
     //Zorgt voor de shortcode  lastest_smb_post om berichten op te halen met smb slug
         function custom_latest_smb_post() {
             $args = array(

@@ -24,6 +24,17 @@
                 console.log('in if else');
             }
         });
+
+        function showImg(n) {
+            var setn = document.getElementById('set' + n);
+            var close = document.getElementsByClassName('open');
+            for (var i = 0; i < close.length; i++) {
+                close[i].style.display = 'none'; 
+            }
+            setn.style.display = 'block';
+        }
+
+
     </script>
     
 </head>
@@ -31,37 +42,39 @@
 <body <?php body_class('smb'); ?>>
 
 <div class ="site-wrapper">
-        <div class ="site-content sitecolorsmb">  
+    <div class ="site-content sitecolorsmb">  
+        <div class = "schaal">
+
+            <?php
+                $albums = get_terms(array(
+                    'taxonomy' => 'album',
+                    'hide_empty' => false,
+                ));
+
+                foreach ($albums as $album) {
+                    $album_id = $album->term_id;
+                    echo "<br><br>";
+
+                    echo $album_id;
+                    echo $album->name;
 
 
+                    // Haal subalbums op voor dit album
+                    $subalbums = get_children(array(
+                        'post_parent' => $album_id,
+                        'post_type' => 'album'
+                    ));
 
-<?php
+                    if (!empty($subalbums)) {
+                        echo "ik ben vader";
+                    }
+                }
+            ?>
 
-$args = array(
-  'post_type' => 'attachment',
-  'post_status' => 'inherit',
-  'posts_per_page' => -1,
-  'post_mime_type' => 'image', // Alleen afbeeldingen
-);
 
-$query = new WP_Query($args);
-
-if ($query->have_posts()) :
-  while ($query->have_posts()) : $query->the_post();
-    $image_url = wp_get_attachment_url();
-    $image_alt = get_post_meta(get_the_ID(), '_wp_attachment_image_alt', true);
-    ?>
-
-    <div class="image-item">
-      <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
+        </div>
     </div>
 
-  <?php endwhile;
-  wp_reset_postdata();
-else :
-  echo 'Geen afbeeldingen gevonden.';
-endif; ?>
-</div>
 <?php
 
 get_footer();

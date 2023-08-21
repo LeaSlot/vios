@@ -1,3 +1,7 @@
+.schaal {
+    height: 100%;
+}
+
 .image-item {
     display:inline-block;
     height: 200px;
@@ -6,4 +10,13 @@
 
 .image-item img {
     height: 100%;
+}
+
+.afbeeldingen {
+    display: inline-block;
+}
+
+.afbeeldingen img {
+    height: 100px;
+    width: auto;
 }

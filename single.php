@@ -65,7 +65,7 @@
                 </div>
                 <div class="columnsb">
                     <div class = "schaling">
-                        <div class="sidebar1 sidebarcolor">
+                        <div class="sidebar1">
                             <?php dynamic_sidebar('sidebar-1'); ?>
                         </div>
                     </div>
