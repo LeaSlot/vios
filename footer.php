@@ -3,7 +3,34 @@
 
 
 <body>
-    <div class="sponsors">
+
+    <?php
+        // Haal de huidige URL op
+        $current_url = esc_url( $_SERVER['REQUEST_URI'] );
+        if ( false !== strpos( $current_url, '/show-en-marchingband-vios/' ) ) {
+            $custom_class = 'sitecolorsmb'; 
+        } 
+        else if ( false !== strpos( $current_url, '/dweilorkest-dorst/' ) ) {
+            $custom_class = 'sitecolordorst'; 
+        } 
+        else if ( false !== strpos( $current_url, '/twirlpower/' ) ) {
+            $custom_class = 'sitecolortwirlpower'; 
+        } 
+        else if ( false !== strpos( $current_url, '/amstelblazers-collectief/' ) ) {
+            $custom_class = 'sitecolorabc'; 
+        } 
+        else if ( false !== strpos( $current_url, '/muziekpietenbende/' ) ) {
+            $custom_class = 'sitecolormpb'; 
+        } 
+        else if ( false !== strpos( $current_url, '/winterwonderband/' ) ) {
+            $custom_class = 'sitecolorwwb'; 
+        } 
+        else {
+            $custom_class = 'sitecolorviosfooter'; 
+        }
+    ?>
+
+    <div class="sponsors <?php echo $custom_class; ?>">
         
     </div>
     <div class="carousel-container">
@@ -87,7 +114,7 @@
 
 
  
-    <div class="footer">
+    <div class="footer <?php echo $custom_class; ?>">
         <?php
             wp_nav_menu(
                 array(

@@ -346,6 +346,63 @@
             return ob_get_clean();
         }
         add_shortcode('latest_dorst_post', 'custom_latest_dorst_post_shortcode');
+
+
+    //Zorgt voor de shortcode dorst_post om alle berichten op te halen met dorst slug
+        function custom_dorst_post() {
+            $posts_per_page = 10; // Aantal berichten per pagina
+            $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; // Haal de huidige pagina op
+        
+            $args = array(
+                'post_type' => 'post',
+                'posts_per_page' => $posts_per_page,
+                'paged' => $paged,
+                'category_name' => 'dorst',
+                'orderby' => 'date',
+                'order' => 'DESC'
+            );
+        
+            $query = new WP_Query($args);
+        
+            if ($query->have_posts()) {
+                while ($query->have_posts()) {
+                    $query->the_post();
+                    echo '<div class="all-post">';
+                    
+                    // Display the post thumbnail (featured image)
+                    if (has_post_thumbnail()) {
+                        echo '<div class="post-thumbnail">';
+                        the_post_thumbnail('thumbnail'); // You can change 'thumbnail' to other image size
+                        echo '</div>';
+                    }
+                    
+                    echo '<div class="post-tekst">';
+                    echo '<a href="' . get_permalink() . '" class="post-title">' . get_the_title() . '</a>';
+                    $aantalwoorden = wp_trim_words(get_the_excerpt(), 60);
+                    echo '<div class="post-excerpt">' . $aantalwoorden . '</div>';
+                    echo '<a href="' . get_permalink() . '" class="read-more">Zie meer</a>';
+                    echo '</div>';
+                    echo '</div>';
+                }
+        
+                // Voeg de paginering toe
+                echo '<div class="pagination">';
+                echo paginate_links(array(
+                    'total' => $query->max_num_pages,
+                    'current' => $paged,
+                ));
+                echo '</div>';
+            }
+        
+            wp_reset_postdata();
+        }
+        
+        function custom_dorst_post_shortcode() {
+            ob_start();
+            custom_dorst_post();
+            return ob_get_clean();
+        }
+        add_shortcode('dorst_berichten', 'custom_dorst_post_shortcode');
         
     //Zorgt voor de shortcode om berichten op te halen met twirlpower slug
         function custom_latest_twirlpower_post() {
@@ -380,6 +437,64 @@
             return ob_get_clean();
         }
         add_shortcode('latest_twirlpower_post', 'custom_latest_twirlpower_post_shortcode');
+
+    //Zorgt voor de shortcode twirlpower_post om alle berichten op te halen met twirlpower slug
+        function custom_twirlpower_post() {
+            $posts_per_page = 10; // Aantal berichten per pagina
+            $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; // Haal de huidige pagina op
+        
+            $args = array(
+                'post_type' => 'post',
+                'posts_per_page' => $posts_per_page,
+                'paged' => $paged,
+                'category_name' => 'twirlpower',
+                'orderby' => 'date',
+                'order' => 'DESC'
+            );
+        
+            $query = new WP_Query($args);
+        
+            if ($query->have_posts()) {
+                while ($query->have_posts()) {
+                    $query->the_post();
+                    echo '<div class="all-post">';
+                    
+                    // Display the post thumbnail (featured image)
+                    if (has_post_thumbnail()) {
+                        echo '<div class="post-thumbnail">';
+                        the_post_thumbnail('thumbnail'); // You can change 'thumbnail' to other image size
+                        echo '</div>';
+                    }
+                    
+                    echo '<div class="post-tekst">';
+                    echo '<a href="' . get_permalink() . '" class="post-title">' . get_the_title() . '</a>';
+                    $aantalwoorden = wp_trim_words(get_the_excerpt(), 60);
+                    echo '<div class="post-excerpt">' . $aantalwoorden . '</div>';
+                    echo '<a href="' . get_permalink() . '" class="read-more">Zie meer</a>';
+                    echo '</div>';
+                    echo '</div>';
+                }
+        
+                // Voeg de paginering toe
+                echo '<div class="pagination">';
+                echo paginate_links(array(
+                    'total' => $query->max_num_pages,
+                    'current' => $paged,
+                ));
+                echo '</div>';
+            }
+        
+            wp_reset_postdata();
+        }
+        
+        function custom_twirlpower_post_shortcode() {
+            ob_start();
+            custom_twirlpower_post();
+            return ob_get_clean();
+        }
+        add_shortcode('twirlpower_berichten', 'custom_twirlpower_post_shortcode');
+
+
         
     //Zorgt voor de shortcode om berichten op te halen met abc slug
         function custom_latest_abc_post() {
@@ -415,6 +530,63 @@
         }
         add_shortcode('latest_abc_post', 'custom_latest_abc_post_shortcode');
     
+    //Zorgt voor de shortcode abc_post om alle berichten op te halen met abc slug
+        function custom_abc_post() {
+            $posts_per_page = 10; // Aantal berichten per pagina
+            $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; // Haal de huidige pagina op
+        
+            $args = array(
+                'post_type' => 'post',
+                'posts_per_page' => $posts_per_page,
+                'paged' => $paged,
+                'category_name' => 'abc',
+                'orderby' => 'date',
+                'order' => 'DESC'
+            );
+        
+            $query = new WP_Query($args);
+        
+            if ($query->have_posts()) {
+                while ($query->have_posts()) {
+                    $query->the_post();
+                    echo '<div class="all-post">';
+                    
+                    // Display the post thumbnail (featured image)
+                    if (has_post_thumbnail()) {
+                        echo '<div class="post-thumbnail">';
+                        the_post_thumbnail('thumbnail'); // You can change 'thumbnail' to other image size
+                        echo '</div>';
+                    }
+                    
+                    echo '<div class="post-tekst">';
+                    echo '<a href="' . get_permalink() . '" class="post-title">' . get_the_title() . '</a>';
+                    $aantalwoorden = wp_trim_words(get_the_excerpt(), 60);
+                    echo '<div class="post-excerpt">' . $aantalwoorden . '</div>';
+                    echo '<a href="' . get_permalink() . '" class="read-more">Zie meer</a>';
+                    echo '</div>';
+                    echo '</div>';
+                }
+        
+                // Voeg de paginering toe
+                echo '<div class="pagination">';
+                echo paginate_links(array(
+                    'total' => $query->max_num_pages,
+                    'current' => $paged,
+                ));
+                echo '</div>';
+            }
+        
+            wp_reset_postdata();
+        }
+        
+        function custom_abc_post_shortcode() {
+            ob_start();
+            custom_abc_post();
+            return ob_get_clean();
+        }
+        add_shortcode('abc_berichten', 'custom_abc_post_shortcode');
+
+
     //Zorgt voor de shortcode om berichten op te halen met mpb slug
         function custom_latest_mpb_post() {
             $args = array(
@@ -448,6 +620,62 @@
             return ob_get_clean();
         }
         add_shortcode('latest_mpb_post', 'custom_latest_mpb_post_shortcode');
+
+    //Zorgt voor de shortcode mpb_post om alle berichten op te halen met mpb slug
+        function custom_mpb_post() {
+            $posts_per_page = 10; // Aantal berichten per pagina
+            $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; // Haal de huidige pagina op
+        
+            $args = array(
+                'post_type' => 'post',
+                'posts_per_page' => $posts_per_page,
+                'paged' => $paged,
+                'category_name' => 'mpb',
+                'orderby' => 'date',
+                'order' => 'DESC'
+            );
+        
+            $query = new WP_Query($args);
+        
+            if ($query->have_posts()) {
+                while ($query->have_posts()) {
+                    $query->the_post();
+                    echo '<div class="all-post">';
+                    
+                    // Display the post thumbnail (featured image)
+                    if (has_post_thumbnail()) {
+                        echo '<div class="post-thumbnail">';
+                        the_post_thumbnail('thumbnail'); // You can change 'thumbnail' to other image size
+                        echo '</div>';
+                    }
+                    
+                    echo '<div class="post-tekst">';
+                    echo '<a href="' . get_permalink() . '" class="post-title">' . get_the_title() . '</a>';
+                    $aantalwoorden = wp_trim_words(get_the_excerpt(), 60);
+                    echo '<div class="post-excerpt">' . $aantalwoorden . '</div>';
+                    echo '<a href="' . get_permalink() . '" class="read-more">Zie meer</a>';
+                    echo '</div>';
+                    echo '</div>';
+                }
+        
+                // Voeg de paginering toe
+                echo '<div class="pagination">';
+                echo paginate_links(array(
+                    'total' => $query->max_num_pages,
+                    'current' => $paged,
+                ));
+                echo '</div>';
+            }
+        
+            wp_reset_postdata();
+        }
+        
+        function custom_mpb_post_shortcode() {
+            ob_start();
+            custom_mpb_post();
+            return ob_get_clean();
+        }
+        add_shortcode('mpb_berichten', 'custom_mpb_post_shortcode');
         
     //Zorgt voor de shortcode om berichten op te halen met wwb slug
         function custom_latest_wwb_post() {
@@ -482,5 +710,61 @@
             return ob_get_clean();
         }
         add_shortcode('latest_wwb_post', 'custom_latest_wwb_post_shortcode');
+
+    //Zorgt voor de shortcode wwb_post om alle berichten op te halen met wwb slug
+        function custom_wwb_post() {
+            $posts_per_page = 10; // Aantal berichten per pagina
+            $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; // Haal de huidige pagina op
+        
+            $args = array(
+                'post_type' => 'post',
+                'posts_per_page' => $posts_per_page,
+                'paged' => $paged,
+                'category_name' => 'wwb',
+                'orderby' => 'date',
+                'order' => 'DESC'
+            );
+        
+            $query = new WP_Query($args);
+        
+            if ($query->have_posts()) {
+                while ($query->have_posts()) {
+                    $query->the_post();
+                    echo '<div class="all-post">';
+                    
+                    // Display the post thumbnail (featured image)
+                    if (has_post_thumbnail()) {
+                        echo '<div class="post-thumbnail">';
+                        the_post_thumbnail('thumbnail'); // You can change 'thumbnail' to other image size
+                        echo '</div>';
+                    }
+                    
+                    echo '<div class="post-tekst">';
+                    echo '<a href="' . get_permalink() . '" class="post-title">' . get_the_title() . '</a>';
+                    $aantalwoorden = wp_trim_words(get_the_excerpt(), 60);
+                    echo '<div class="post-excerpt">' . $aantalwoorden . '</div>';
+                    echo '<a href="' . get_permalink() . '" class="read-more">Zie meer</a>';
+                    echo '</div>';
+                    echo '</div>';
+                }
+        
+                // Voeg de paginering toe
+                echo '<div class="pagination">';
+                echo paginate_links(array(
+                    'total' => $query->max_num_pages,
+                    'current' => $paged,
+                ));
+                echo '</div>';
+            }
+        
+            wp_reset_postdata();
+        }
+        
+        function custom_wwb_post_shortcode() {
+            ob_start();
+            custom_wwb_post();
+            return ob_get_clean();
+        }
+        add_shortcode('wwb_berichten', 'custom_wwb_post_shortcode');
         
 ?>

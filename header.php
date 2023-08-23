@@ -126,7 +126,33 @@
 </head>
 
 <body>
-    <header class="header">
+
+    <?php
+        // Haal de huidige URL op
+        $current_url = esc_url( $_SERVER['REQUEST_URI'] );
+        if ( false !== strpos( $current_url, '/show-en-marchingband-vios/' ) ) {
+            $custom_class = 'sitecolorsmb'; 
+        } 
+        else if ( false !== strpos( $current_url, '/dweilorkest-dorst/' ) ) {
+            $custom_class = 'sitecolordorst'; 
+        } 
+        else if ( false !== strpos( $current_url, '/twirlpower/' ) ) {
+            $custom_class = 'sitecolortwirlpower'; 
+        } 
+        else if ( false !== strpos( $current_url, '/amstelblazers-collectief/' ) ) {
+            $custom_class = 'sitecolorabc'; 
+        } 
+        else if ( false !== strpos( $current_url, '/muziekpietenbende/' ) ) {
+            $custom_class = 'sitecolormpb'; 
+        } 
+        else if ( false !== strpos( $current_url, '/winterwonderband/' ) ) {
+            $custom_class = 'sitecolorwwb'; 
+        } 
+        else {
+            $custom_class = 'sitecolorvioshead'; 
+        }
+    ?>
+    <header class="header <?php echo $custom_class; ?>">
         <div class = "tabellogo">
             <?php
                 if(function_exists('the_custom_logo')){
@@ -139,17 +165,17 @@
         </div>
         <div class = "tabelmobiel">
             <!--mobiele-->
-            <button onclick="mobielmenu()" class="toggle-nav">&#9776;</button>
+            <button onclick="mobielmenu()" class="toggle-nav <?php echo $custom_class; ?>">&#9776;</button>
         </div>
         <div class="tabelnav">
             <nav id="uitklapmenu1" class="uitklapmenu">
                 <div class="afdelingdiv">
-                    <a onclick = "afdelingenmobiel()" id= "buttonafdeling" class = "hoofditem">Afdelingen <span class = "pijl">&#11167;</span></a>
+                    <a onclick = "afdelingenmobiel()" id= "buttonafdeling" class = "hoofditem <?php echo $custom_class; ?>">Vereniging <span class = "pijl">&#11167;</span></a>
                     <?php
                         wp_nav_menu(
                             array(
                                 'menu' =>'afdelingen',
-                                'container_class' => 'afdeling1',
+                                'container_class' => 'afdeling1 ' . $custom_class,
                                 'container_id' => 'afdeling2',
                                 'theme_location' => 'afdelingen',
                             )
@@ -157,44 +183,31 @@
                     ?>
                 </div>
                 <div class="opleidingdiv">
-                    <a onclick = "opleidingenmobiel()" id="buttonopleiding" class = "hoofditem">Opleidingen <span class = "pijl">&#11167;</span></a>
+                    <a onclick = "opleidingenmobiel()" id="buttonopleiding" class = "hoofditem <?php echo $custom_class; ?>">Opleidingen <span class = "pijl">&#11167;</span></a>
                     <?php
                         wp_nav_menu(
                             array(
                                 'menu' =>'opleidingen',
-                                'container_class' => 'opleiding1',
+                                'container_class' => 'opleiding1 ' . $custom_class,
                                 'container_id' => 'opleiding2',
                                 'theme_location' => 'opleidingen',
                             )
                         );
                     ?>
                 </div>
-                <div class="galerijdiv">
-                    <a onclick = "galerijmobiel()" id="buttongalerij" class = "hoofditem">Galerij <span class = "pijl">&#11167;</span></a>
-                    <?php
-                        wp_nav_menu(
-                            array(
-                                'menu' =>'galerij',
-                                'container_class' => 'galerij1',
-                                'container_id' => 'galerij2',
-                                'theme_location' => 'galerij',
-                            )
-                        );
-                    ?>
-                </div>
                 <div class="supportdiv">
-                    <a href="/viostest/support-vios" class="hoofditem">Support VIOS</a>
+                    <a href="/viostest/support-vios" class="hoofditem <?php echo $custom_class; ?>">Support VIOS</a>
                 </div>
                 <div class="agendadiv">
                     <a href="/viostest/agenda" class="hoofditem">Agenda</a>
                 </div>
                 <div class ="nieuwsdiv">
-                    <a onclick = "nieuwsmobiel()" id="buttonnieuws" class = "hoofditem">Nieuws <span class = "pijl">&#11167;</span></a>
+                    <a onclick = "nieuwsmobiel()" id="buttonnieuws" class = "hoofditem <?php echo $custom_class; ?>">Nieuws <span class = "pijl">&#11167;</span></a>
                     <?php
                         wp_nav_menu(
                             array(
                                 'menu' =>'nieuws',
-                                'container_class' => 'nieuws1',
+                                'container_class' => 'nieuws1 ' . $custom_class,
                                 'container_id' => 'nieuws2',
                                 'theme_location' => 'nieuws',
                             )
@@ -202,12 +215,12 @@
                     ?>
                 </div>
                 <div class = "contactdiv">
-                    <a onclick = "contactmobiel()" id="buttoncontact" class = "hoofditem">Contact <span class = "pijl">&#11167;</span></a>
+                    <a onclick = "contactmobiel()" id="buttoncontact" class = "hoofditem <?php echo $custom_class; ?>">Contact <span class = "pijl">&#11167;</span></a>
                     <?php
                         wp_nav_menu(
                             array(
                                 'menu' =>'contact',
-                                'container_class' => 'contact1',
+                                'container_class' => 'contact1 ' . $custom_class,
                                 'container_id' => 'contact2',
                                 'theme_location' => 'contact',
                             )

@@ -1,5 +1,4 @@
 .sponsors {
-    background-color: var(--blauw);
     font-family: var(--fonts);
     font-size:xx-large;
     color:#fff;
@@ -56,7 +55,6 @@
 
     .footer {
         height: 70px;
-        background-color: var(--blauw);
         width: 100%;
         text-align: center;
     }

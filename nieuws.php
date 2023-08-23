@@ -2,7 +2,7 @@
 
 <?php
 /*
-Template Name: mpb
+Template Name: nieuws
 */
 get_header();
 ?>
@@ -29,12 +29,13 @@ get_header();
 
 </head>
 
-<body <?php body_class('mpb'); ?>>
+<body>
+
 
 <div class ="site-wrapper">
-        <div class ="site-content sitecolormpb">    
+        <div class ="site-content">    
             <div class="grid-container">
-                <div class="columntext">
+                <div class="columnnieuws">
                     <?php
                         if (have_posts()) :
                             while (have_posts()) : the_post();

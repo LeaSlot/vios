@@ -8,9 +8,43 @@
         position: absolute;
         height: 100px;
         width: 100%;
-        background: var(--rood);
         display: block;
     } 
+
+    .header .tabelnav .uitklapmenu .sitecolorsmb a:hover{
+        background: var(--smbvol);
+        color: #ffffff;
+    }
+    
+    .header .tabelnav .uitklapmenu .sitecolordorst a:hover {
+        background: var(--dorstvol);
+        color: #ffffff;
+    }
+    
+    .header .tabelnav .uitklapmenu .sitecolortwirlpower a:hover {
+        background: var(--twirlpowervol) ;
+        color: #ffffff;
+    }
+    
+    .header .tabelnav .uitklapmenu .sitecolorabc a:hover {
+        background:  var(--abcvol) ;
+        color: #ffffff;
+    }
+    
+    .header .tabelnav .uitklapmenu .sitecolormpb a:hover {
+        background: var(--mpbvol) ;
+        color: #ffffff;
+    }
+    
+    .header .tabelnav .uitklapmenu .sitecolorwwb a:hover {
+        background:  var(--wwbvol);
+        color: #ffffff;
+    }
+    
+    .header .tabelnav .uitklapmenu .sitecolorvioshead a:hover {
+        background: var(--rood);
+        color: #ffffff;
+    }
     
     .pijl{
         font-size:10px;
@@ -20,6 +54,7 @@
     .header .tabellogo{
         position: absolute;
         margin: 25px;
+        box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.2);
     }
 
     .header .logo {
@@ -49,7 +84,6 @@
         font-size: 18px;
         font-weight: bold;
         border:10px;
-        background-color: var(--rood);
     }
 
     .header .tabelnav .uitklapmenu .menu{
@@ -87,11 +121,6 @@
         padding: 10px;
     }
 
-    .header .tabelnav .uitklapmenu .afdeling1 a:hover{
-        color: #ffffff;
-        background:var(--rood);
-    }
-
     #buttonopleiding:hover ~ .opleiding1 {
         display:block;
     }
@@ -124,7 +153,6 @@
 
     .header .tabelnav .uitklapmenu .opleiding1 a:hover{
         color: #ffffff;
-        background:var(--rood);
     }
 
 
@@ -161,7 +189,6 @@
 
     .header .tabelnav .uitklapmenu .galerij1 a:hover{
         color: #ffffff;
-        background:var(--rood);
     }
 
     #buttonnieuws:hover ~ .nieuws1 {
@@ -197,7 +224,6 @@
 
     .header .tabelnav .uitklapmenu .nieuws1 a:hover{
         color: #ffffff;
-        background:var(--rood);
     }
 
     #buttoncontact:hover ~ .contact1 {
@@ -233,7 +259,6 @@
 
     .header .tabelnav .uitklapmenu .contact1 a:hover{
         color: #ffffff;
-        background:var(--rood);
     }
 
     .afdelingdiv {
@@ -244,37 +269,31 @@
     .opleidingdiv {
         position: absolute;
         width: max-content;
-        margin-left:137px;
-    }
-
-    .galerijdiv {
-        position: absolute;
-        width: max-content;
-        margin-left:285px;
+        margin-left:136px;
     }
 
     .supportdiv {
         position: absolute;
         width: max-content;
-        margin-left:385px;
+        margin-left:284px;
     }
 
     .agendadiv {
         position: absolute;
         width: max-content;
-        margin-left:535px;
+        margin-left:434px;
     }
 
     .nieuwsdiv {
         position: absolute;
         width: max-content;
-        margin-left:644px;
+        margin-left:543px;
     }
 
     .contactdiv {
         position: absolute;
         width: max-content;
-        margin-left:751px;
+        margin-left:650px;
     }
 
 
@@ -290,6 +309,33 @@
         position: absolute;
         height: 70px;
         width: 100%;
+    }
+
+    .sitecolorsmb a{
+        background: var(--smbvol);
+    }
+    
+    .sitecolordorst a{
+        background: var(--dorstvol);
+    }
+    
+    .sitecolortwirlpower a {
+        background: var(--twirlpowervol) ;
+    }
+    
+    .sitecolorabc a {
+        background:  var(--abcvol) ;
+    }
+    
+    .sitecolormpb a {
+        background: var(--mpbvol) ;
+    }
+    
+    .sitecolorwwb a {
+        background:  var(--wwbvol);
+    }
+    
+    .sitecolorvioshead a {
         background: var(--rood);
     }
 
@@ -320,7 +366,6 @@
         display: block;
         border-style: none;
         color: #fff;
-        background-color: var(--rood);
         text-decoration: none;
         font-size: 20px;
     }
@@ -359,8 +404,8 @@
         padding:0;
         list-style: none;
         margin:0;
-        background-color: var(--rood);
     }
+
     
     .header .tabelnav .uitklapmenu .afdeling1{
         display: none;
@@ -378,9 +423,10 @@
         font-weight: bold;
         text-decoration: none;
         color:#fff;
-        background-color:var(--rood);
         padding:10px;
     }  
+
+    
 
     .header .tabelnav .uitklapmenu .opleiding1{
         display: none;
@@ -398,27 +444,6 @@
         font-weight: bold;
         text-decoration: none;
         color:#fff;
-        background-color:var(--rood);
-        padding:10px;
-    }
-
-    .header .tabelnav .uitklapmenu .galerij1{
-        display: none;
-        width:100%;
-        position: relative;
-        top: 0;
-        left: 0;
-        z-index: 99999;
-        padding:0;
-    }
-
-    .header .tabelnav .uitklapmenu .galerij1 a{
-        display:block;
-        font-family: var(--fonts);
-        font-weight: bold;
-        text-decoration: none;
-        color:#fff;
-        background-color:var(--rood);
         padding:10px;
     }
 
@@ -438,7 +463,6 @@
         font-weight: bold;
         text-decoration: none;
         color:#fff;
-        background-color:var(--rood);
         padding:10px;
     }
 
@@ -458,7 +482,6 @@
         font-weight: bold;
         text-decoration: none;
         color:#fff;
-        background-color:var(--rood);
         padding:10px;
     }
 
