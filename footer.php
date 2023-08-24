@@ -2,8 +2,10 @@
 <html lang="en">
 
 
+
 <body>
 
+    <!--Maakt de class die nodig is om de kleur van de footer aan te passen naar de afdeling-->
     <?php
         // Haal de huidige URL op
         $current_url = esc_url( $_SERVER['REQUEST_URI'] );
@@ -28,11 +30,41 @@
         else {
             $custom_class = 'sitecolorviosfooter'; 
         }
+        
+        $categories = get_the_category();
+        $category_class = '';
+        foreach ($categories as $category) {
+            $category_class .= $category->slug;
+        }
+        if ($category_class == 'smb') {
+            $custom_class = 'sitecolorsmb';
+        }
+        else if ($category_class == 'dorst') {
+            $custom_class = 'sitecolordorst'; 
+        } 
+        else if ($category_class == 'twirlpower') {
+            $custom_class = 'sitecolortwirlpower'; 
+        } 
+        else if ($category_class == 'abc') {
+            $custom_class = 'sitecolorabc'; 
+        } 
+        else if ($category_class == 'mpb') {
+            $custom_class = 'sitecolormpb'; 
+        } 
+        else if ($category_class == 'wwb') {
+            $custom_class = 'sitecolorwwb'; 
+        } 
+        else if ($category_class == 'algemeen') {
+            $custom_class = 'sitecolorvioshead'; 
+        }
     ?>
 
+    <!--Zorgt voor de balk boven de carousel-->
     <div class="sponsors <?php echo $custom_class; ?>">
         
     </div>
+
+    <!--Maakt de carousel-->
     <div class="carousel-container">
         <div class="carousel">
             <?php
@@ -60,60 +92,8 @@
             ?>
         </div>
     </div>
-
-<script>
-    (function() {
-  var carousel = document.querySelector('.carousel');
-  var carouselItems = document.querySelectorAll('.carousel-item');
-  var currentIndex = 0;
-  var visibleItems = 4; // Aantal zichtbare items per keer (standaard 4)
-
-  function updateVisibleItems() {
-    if (window.innerWith > 1200) {
-        visibileItems = 4;
-    }
-    if (window.innerWidth <= 1200) {
-      visibleItems = 3; // Toon drie items op kleinere schermen
-    }
-    if (window.innerWidth <= 900) {
-        visibleItems = 2;
-    }
-    if (window.innerWidth <= 650) {
-      visibleItems = 1; // Toon één item op nog kleinere schermen
-    }
-  }
-
-  function updateItemWidth() {
-    itemWidth = carouselItems[0].offsetWidth;
-  }
-
-  function showSlide(index) {
-    var translateValue = index * -itemWidth;
-    carousel.style.transform = 'translateX(' + translateValue + 'px)';
-  }
-
-  function startCarousel() {
-    slideInterval = setInterval(function() {
-      currentIndex = (currentIndex + 1) % (carouselItems.length - (visibleItems - 1));
-      showSlide(currentIndex);
-    }, 5000);
-  }
-
-  updateVisibleItems(); // Stel het juiste aantal zichtbare items in bij het laden van de pagina
-  updateItemWidth();
-  startCarousel();
-
-  // Voeg event listeners toe om het aantal zichtbare items bij te werken bij resizen
-  window.addEventListener('resize', function() {
-    updateVisibleItems();
-    updateItemWidth();
-    showSlide(currentIndex); // Toon de huidige dia op basis van bijgewerkte informatie
-  });
-})();   
-</script>
-
-
  
+    <!--Maakt het menu onder de carousel-->
     <div class="footer <?php echo $custom_class; ?>">
         <?php
             wp_nav_menu(
@@ -127,5 +107,67 @@
         ?>
     </div>
     
+
+    <script>
+        //Zorgt voor de werking van het carousel
+        var carousel = document.querySelector('.carousel');
+        var carouselItems = document.querySelectorAll('.carousel-item');
+        var currentIndex = 0;
+        var visibleItems = 5;
+
+        function updateVisibleItems() {
+            if (window.innerWidth > 1200) {
+                visibleItems = 5;
+            }
+            if (window.innerWidth <= 1200) {
+                visibleItems = 4;
+            }
+            if (window.innerWidth <= 900) {
+                visibleItems = 3;
+            }
+            if (window.innerWidth <= 720) {
+                visibleItems = 2;
+            }
+            if (window.innerWidth <= 450) {
+                visibleItems = 1;
+            }
+        }
+
+        function setCarouselWidth(element) {
+            console.log(element)
+            element.style.width = window.innerWidth/visibleItems-1 +'px';
+            console.log(element.style.width)
+        }
+
+        function updateItemWidth() {
+            itemWidth = carouselItems[0].offsetWidth;
+        }
+
+        function startCarousel() {
+            slideInterval = setInterval(function() {
+            currentIndex = (currentIndex + 1) % (carouselItems.length - (visibleItems - 1));
+            showSlide(currentIndex);
+            }, 5000);
+        }
+
+        function showSlide(index) {
+            var translateValue = index * -itemWidth;
+            carousel.style.transform = 'translateX(' + translateValue + 'px)';
+        }
+
+        // Stel het juiste aantal zichtbare items in bij het laden van de pagina
+            updateVisibleItems(); 
+            carouselItems.forEach(setCarouselWidth)
+            updateItemWidth();
+            startCarousel();
+
+        // Voeg event listeners toe om het aantal zichtbare items bij te werken bij resizen
+            window.addEventListener('resize', function() {
+                updateVisibleItems();
+                carouselItems.forEach(setCarouselWidth)
+                updateItemWidth();
+                showSlide(currentIndex); // Toon de huidige dia op basis van bijgewerkte informatie
+            });  
+    </script>
 </body>
 </html>

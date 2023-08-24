@@ -1,488 +1,429 @@
+.header{
+    left: 0;
+    top: 0;
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    display: block;
+} 
 
+.header .logo {
+    height: 50px;
+}
 
-@media screen and ( min-width: 1075px) {
-/*HEADER*/
-    .header{
-        left: 0;
-        top: 0;
-        position: absolute;
-        height: 100px;
-        width: 100%;
-        display: block;
-    } 
+.pijl{
+    font-size:10px;
+    vertical-align: 4px;
+}
 
-    .header .tabelnav .uitklapmenu .sitecolorsmb a:hover{
-        background: var(--smbvol);
-        color: #ffffff;
-    }
-    
-    .header .tabelnav .uitklapmenu .sitecolordorst a:hover {
-        background: var(--dorstvol);
-        color: #ffffff;
-    }
-    
-    .header .tabelnav .uitklapmenu .sitecolortwirlpower a:hover {
-        background: var(--twirlpowervol) ;
-        color: #ffffff;
-    }
-    
-    .header .tabelnav .uitklapmenu .sitecolorabc a:hover {
-        background:  var(--abcvol) ;
-        color: #ffffff;
-    }
-    
-    .header .tabelnav .uitklapmenu .sitecolormpb a:hover {
-        background: var(--mpbvol) ;
-        color: #ffffff;
-    }
-    
-    .header .tabelnav .uitklapmenu .sitecolorwwb a:hover {
-        background:  var(--wwbvol);
-        color: #ffffff;
-    }
-    
-    .header .tabelnav .uitklapmenu .sitecolorvioshead a:hover {
-        background: var(--rood);
-        color: #ffffff;
-    }
-    
-    .pijl{
-        font-size:10px;
-        vertical-align: 4px;
-    }
+.header .tabelnav .uitklapmenu .menu {
+    padding:0;
+    list-style: none;
+    margin:0;
+}
 
-    .header .tabellogo{
-        position: absolute;
-        margin: 25px;
-        box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.2);
-    }
+@media screen and ( min-width: 980px) {
+    /*uitklapmenu persoonlijke kleur hoveren*/
+        .header .tabelnav .uitklapmenu .sitecolorsmb a:hover{
+            background: var(--smbvol);
+            color: #ffffff;
+        }
+        
+        .header .tabelnav .uitklapmenu .sitecolordorst a:hover {
+            background: var(--dorstvol);
+            color: #ffffff;
+        }
+        
+        .header .tabelnav .uitklapmenu .sitecolortwirlpower a:hover {
+            background: var(--twirlpowervol) ;
+            color: #ffffff;
+        }
+        
+        .header .tabelnav .uitklapmenu .sitecolorabc a:hover {
+            background:  var(--abcvol) ;
+            color: #ffffff;
+        }
+        
+        .header .tabelnav .uitklapmenu .sitecolormpb a:hover {
+            background: var(--mpbvol) ;
+            color: #ffffff;
+        }
+        
+        .header .tabelnav .uitklapmenu .sitecolorwwb a:hover {
+            background:  var(--wwbvol);
+            color: #ffffff;
+        }
+        
+        .header .tabelnav .uitklapmenu .sitecolorvioshead a:hover {
+            background: var(--rood);
+            color: #ffffff;
+        }
 
-    .header .logo {
-        height: 50px;
-    }
+    /*Opmaak logo*/
+        .header .tabellogo{
+            position: absolute;
+            margin: 25px;
+            box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.2);
+        }
 
-    .header .tabelmobiel{
-        display:none
-    }
+    /*Afwezigheid hamburgericoon op groot scherm*/
+        .header .tabelmobiel{
+            display:none
+        }
 
-    .header .tabelnav{
-        height: 100px;
-        width: calc(100% - 225px);
-        position:absolute;
-        top:0;
-        margin-left: 225px;
-        margin-top: 41px;
-    }
+    /*Bovenste menubalk*/
+        .header .tabelnav{
+            height: 100px;
+            width: calc(100% - 225px);
+            position:absolute;
+            top:0;
+            margin-left: 225px;
+            margin-top: 41px;
+        }
 
-    .header .tabelnav .uitklapmenu .hoofditem {
-        display: inline;
-        position: relative;
-        padding:0;
-        font-family: var(--fonts);
-        text-decoration: none;
-        color: #fff;
-        font-size: 18px;
-        font-weight: bold;
-        border:10px;
-    }
+        .header .tabelnav .uitklapmenu .hoofditem {
+            font-family: var(--fonts);
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+        }
 
-    .header .tabelnav .uitklapmenu .menu{
-        list-style: none;
-        padding:0;
-    }
+    /*De uitklapmenu's*/
+        /*Na hoveren uitklapmenu zichtbaar*/
+        #buttonafdeling:hover ~ .afdeling1 {
+            display:block;
+        }
 
-    #buttonafdeling:hover ~ .afdeling1 {
-        display:block;
-    }
+        .header .tabelnav .uitklapmenu .afdeling1:hover {
+            display:block;
+        }
 
-    .header .tabelnav .uitklapmenu .afdeling1:hover {
-        display:block;
-    }
+        /*Opmaak van uitklapmenu*/
+        .header .tabelnav .uitklapmenu .afdeling1{
+            display:none;
+            position: relative; 
+            transform: translateY(0);
+            top: 0;
+            z-index: 99999;
+            width: max-content;
+            list-style-type:none;
+            padding:0;
+            box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
+        }
 
-    .header .tabelnav .uitklapmenu .afdeling1{
-        display:none;
-        position: relative; 
-        transform: translateY(-16px);
-        top: 0;
-        z-index: 99999;
-        width: max-content;
-        list-style-type:none;
-        padding:0;
-        box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
-    }
+        .header .tabelnav .uitklapmenu .afdeling1 a{
+            display: block;
+            font-weight: bold;
+            font-family: var(--fonts);
+            color: #000;
+            background:#fff;
+            text-decoration: none;
+            padding: 10px;
+        }
+        /*Na hoveren uitklapmenu zichtbaar*/
+        #buttonopleiding:hover ~ .opleiding1 {
+            display:block;
+        }
 
-    .header .tabelnav .uitklapmenu .afdeling1 a{
-        display: block;
-        font-weight: bold;
-        font-family: var(--fonts);
-        color: #000;
-        background:#fff;
-        text-decoration: none;
-        padding: 10px;
-    }
+        .header .tabelnav .uitklapmenu .opleiding1:hover {
+            display:block;
+        }
+        /*Opmaak van uitklapmenu*/
+        .header .tabelnav .uitklapmenu .opleiding1{
+            display:none;
+            position: relative; 
+            top: 0;
+            z-index: 99999;
+            width: max-content;
+            list-style-type:none;
+            padding:0;
+            box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
+        }
 
-    #buttonopleiding:hover ~ .opleiding1 {
-        display:block;
-    }
+        .header .tabelnav .uitklapmenu .opleiding1 a{
+            display: block;
+            font-weight: bold;
+            font-family: var(--fonts);
+            color: #000;
+            background:#fff;
+            text-decoration: none;
+            padding: 10px;
+        }
 
-    .header .tabelnav .uitklapmenu .opleiding1:hover {
-        display:block;
-    }
+        /*Na hoveren uitklapmenu zichtbaar*/
+        #buttonnieuws:hover ~ .nieuws1 {
+            display:block;
+        }
 
-    .header .tabelnav .uitklapmenu .opleiding1{
-        display:none;
-        position: relative; 
-        transform: translateY(-16px);
-        top: 0;
-        z-index: 99999;
-        width: max-content;
-        list-style-type:none;
-        padding:0;
-        box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
-    }
+        .header .tabelnav .uitklapmenu .nieuws1:hover {
+            display:block;
+        }
 
-    .header .tabelnav .uitklapmenu .opleiding1 a{
-        display: block;
-        font-weight: bold;
-        font-family: var(--fonts);
-        color: #000;
-        background:#fff;
-        text-decoration: none;
-        padding: 10px;
-    }
+        /*Opmaak van uitklapmenu*/
+        .header .tabelnav .uitklapmenu .nieuws1{
+            display:none;
+            position: relative; 
+            transform: translateX(-231px);
+            top: 0;
+            left: 0;
+            z-index: 99999;
+            width: max-content;
+            list-style-type:none;
+            padding:0;
+            box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
+        }
 
-    .header .tabelnav .uitklapmenu .opleiding1 a:hover{
-        color: #ffffff;
-    }
+        .header .tabelnav .uitklapmenu .nieuws1 a{
+            display: block;
+            font-weight: bold;
+            font-family: var(--fonts);
+            color: #000;
+            background:#fff;
+            text-decoration: none;
+            padding: 10px;
+        }
 
+        /*Na hoveren uitklapmenu zichtbaar*/
+        #buttoncontact:hover ~ .contact1 {
+            display:block;
+        }
 
-    #buttongalerij:hover ~ .galerij1 {
-        display:block;
-    }
+        .header .tabelnav .uitklapmenu .contact1:hover {
+            display:block;
+        }
 
-    .header .tabelnav .uitklapmenu .galerij1:hover {
-        display:block;
-    }
+        /*Opmaak van uitklapmenu*/
+        .header .tabelnav .uitklapmenu .contact1{
+            display:none;
+            position: relative; 
+            transform: translateX(-93px);  
+            top: 0;
+            left:0;
+            z-index: 99999;
+            width: max-content;
+            list-style-type:none;
+            padding:0;
+            box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
+        }
 
-    .header .tabelnav .uitklapmenu .galerij1{
-        display:none;
-        position: relative; 
-        transform: translateY(-16px);
-        top: 0;
-        left: 0;
-        z-index: 99999;
-        width: max-content;
-        list-style-type:none;
-        padding:0;
-        box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
-    }
+        .header .tabelnav .uitklapmenu .contact1 a{
+            display: block;
+            font-weight: bold;
+            font-family: var(--fonts);
+            color: #000;
+            background:#fff;
+            text-decoration: none;
+            padding: 10px;
+        }
 
-    .header .tabelnav .uitklapmenu .galerij1 a{
-        display: block;
-        font-weight: bold;
-        font-family: var(--fonts);
-        color: #000;
-        background:#fff;
-        text-decoration: none;
-        padding: 10px;
-    }
+        /*Positie van knoppen*/
+        .afdelingdiv {
+            position: absolute;
+            width: max-content;
+        }
 
-    .header .tabelnav .uitklapmenu .galerij1 a:hover{
-        color: #ffffff;
-    }
+        .opleidingdiv {
+            position: absolute;
+            width: max-content;
+            margin-left:136px;
+        }
 
-    #buttonnieuws:hover ~ .nieuws1 {
-        display:block;
-    }
+        .supportdiv {
+            position: absolute;
+            width: max-content;
+            margin-left:284px;
+        }
 
-    .header .tabelnav .uitklapmenu .nieuws1:hover {
-        display:block;
-    }
+        .agendadiv {
+            position: absolute;
+            width: max-content;
+            margin-left:434px;
+        }
 
-    .header .tabelnav .uitklapmenu .nieuws1{
-        display:none;
-        position: relative; 
-        transform: translateY(-16px) translateX(-231px);
-        top: 0;
-        left: 0;
-        z-index: 99999;
-        width: max-content;
-        list-style-type:none;
-        padding:0;
-        box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
-    }
+        .nieuwsdiv {
+            position: absolute;
+            width: 77px;
+            margin-left:543px;
+        }
 
-    .header .tabelnav .uitklapmenu .nieuws1 a{
-        display: block;
-        font-weight: bold;
-        font-family: var(--fonts);
-        color: #000;
-        background:#fff;
-        text-decoration: none;
-        padding: 10px;
-    }
-
-    .header .tabelnav .uitklapmenu .nieuws1 a:hover{
-        color: #ffffff;
-    }
-
-    #buttoncontact:hover ~ .contact1 {
-        display:block;
-    }
-
-    .header .tabelnav .uitklapmenu .contact1:hover {
-        display:block;
-    }
-
-    .header .tabelnav .uitklapmenu .contact1{
-        display:none;
-        position: relative; 
-        transform: translateY(-16px) translateX(-93px);  
-        top: 0;
-        left:0;
-        z-index: 99999;
-        width: max-content;
-        list-style-type:none;
-        padding:0;
-        box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
-    }
-
-    .header .tabelnav .uitklapmenu .contact1 a{
-        display: block;
-        font-weight: bold;
-        font-family: var(--fonts);
-        color: #000;
-        background:#fff;
-        text-decoration: none;
-        padding: 10px;
-    }
-
-    .header .tabelnav .uitklapmenu .contact1 a:hover{
-        color: #ffffff;
-    }
-
-    .afdelingdiv {
-        position: absolute;
-        width: max-content;
-    }
-
-    .opleidingdiv {
-        position: absolute;
-        width: max-content;
-        margin-left:136px;
-    }
-
-    .supportdiv {
-        position: absolute;
-        width: max-content;
-        margin-left:284px;
-    }
-
-    .agendadiv {
-        position: absolute;
-        width: max-content;
-        margin-left:434px;
-    }
-
-    .nieuwsdiv {
-        position: absolute;
-        width: max-content;
-        margin-left:543px;
-    }
-
-    .contactdiv {
-        position: absolute;
-        width: max-content;
-        margin-left:650px;
-    }
-
-
+        .contactdiv {
+            position: absolute;
+            width: 81px;
+            margin-left:650px;
+        }
 }
 
 
 
-@media screen and ( max-width: 1075px) {
-    
-    .header {
-        left: 0;
-        top: 0;
-        position: absolute;
-        height: 70px;
-        width: 100%;
-    }
+@media screen and ( max-width: 980px) {
 
-    .sitecolorsmb a{
-        background: var(--smbvol);
-    }
-    
-    .sitecolordorst a{
-        background: var(--dorstvol);
-    }
-    
-    .sitecolortwirlpower a {
-        background: var(--twirlpowervol) ;
-    }
-    
-    .sitecolorabc a {
-        background:  var(--abcvol) ;
-    }
-    
-    .sitecolormpb a {
-        background: var(--mpbvol) ;
-    }
-    
-    .sitecolorwwb a {
-        background:  var(--wwbvol);
-    }
-    
-    .sitecolorvioshead a {
-        background: var(--rood);
-    }
+    /*hamburgermenu persoonlijke kleur*/
+        .sitecolorsmb a{
+            background: var(--smbvol);
+        }
+        
+        .sitecolordorst a{
+            background: var(--dorstvol);
+        }
+        
+        .sitecolortwirlpower a {
+            background: var(--twirlpowervol) ;
+        }
+        
+        .sitecolorabc a {
+            background:  var(--abcvol) ;
+        }
+        
+        .sitecolormpb a {
+            background: var(--mpbvol) ;
+        }
+        
+        .sitecolorwwb a {
+            background:  var(--wwbvol);
+        }
+        
+        .sitecolorvioshead a {
+            background: var(--rood);
+        }
 
-    .pijl{
-        font-size:10px;
-        vertical-align: 4px;
-    }
+    /*Opmaak logo*/
+        .header {
+            text-align: center;
+        }
 
-    .header .logo{
-            height: 34px;
-    }
+        .header .tabellogo{
+            display: inline-block;
+            width: fit-content;
+            margin: 25px 0;
+            transform:translateX(0.5vw);
+            box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.2);
+        }
 
-    .header .tabellogo{
-        position: absolute;
-        margin:18px;
-        float:left;
-    }
+    /*Opmaak hamburgermenu icoon*/
+        .header .tabelmobiel{
+            float:left; 
+            position:relative;
+            top:50%;
+            transform: translateY(-50%);
+            margin-left:19px;
+        }
 
-    .header .tabelmobiel{
-        float:right; 
-        position:relative;
-        top:50%;
-        transform: translateY(-50%);
-        margin-right:19px;
-    }
+        .header .toggle-nav{
+            display: block;
+            border-style: none;
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+        }
 
-    .header .toggle-nav{
-        display: block;
-        border-style: none;
-        color: #fff;
-        text-decoration: none;
-        font-size: 20px;
-    }
+    /*Hamburgermenu opmaak*/
+        .header .tabelnav{
+            text-align: left;
+            position:absolute;
+            width:100%;
+            height:fit-content;
+            background-color: #fff;
+            margin-left:0;
+            top:0;
+            z-index: 99999;
+            transform: translateY(100px);
+            box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
+        }
 
-    .header .tabelnav{
-        position:absolute;
-        width:100%;
-        height:fit-content;
-        background-color: #fff;
-        margin-left:0;
-        top:0;
-        z-index: 99999;
-        transform: translateY(70px);
-        box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
-    }
+        .header .tabelnav .uitklapmenu {
+            display: none;
+            z-index: 99999;
+            overflow-y: auto;
+        }
 
-    .header .tabelnav .uitklapmenu {
-        display: none;
-        z-index: 99999;
-        overflow-y: auto;
-    }
+        .header .tabelnav .uitklapmenu .hoofditem {
+            display: block;
+            font-family: var(--fonts);
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            color:#000;
+            background-color: #fff;
+            text-decoration: none;
+            padding:10px;
+        }
 
-    .header .tabelnav .uitklapmenu .hoofditem {
-        display: block;
-        font-family: var(--fonts);
-        font-size: 18px;
-        font-weight: bold;
-        border: none;
-        color:#000;
-        background-color: #fff;
-        text-decoration: none;
-        padding:10px;
-    }
+        /*Opmaak per uitklapmenu*/
+        .header .tabelnav .uitklapmenu .afdeling1{
+            display: none;
+            width:100%;
+            position: relative;
+            z-index: 99999;
+            padding:0;
+        }
 
-    .header .tabelnav .uitklapmenu .menu {
-        padding:0;
-        list-style: none;
-        margin:0;
-    }
+        .header .tabelnav .uitklapmenu .afdeling1 a{
+            display:block;
+            font-family: var(--fonts);
+            font-weight: bold;
+            text-decoration: none;
+            color:#fff;
+            padding:10px;
+        }  
 
-    
-    .header .tabelnav .uitklapmenu .afdeling1{
-        display: none;
-        width:100%;
-        position: relative;
-        top: 0;
-        left: 0;
-        z-index: 99999;
-        padding:0;
-    }
+        
 
-    .header .tabelnav .uitklapmenu .afdeling1 a{
-        display:block;
-        font-family: var(--fonts);
-        font-weight: bold;
-        text-decoration: none;
-        color:#fff;
-        padding:10px;
-    }  
+        .header .tabelnav .uitklapmenu .opleiding1{
+            display: none;
+            width:100%;
+            position: relative;
+            top: 0;
+            left: 0;
+            z-index: 99999;
+            padding:0;
+        }
 
-    
+        .header .tabelnav .uitklapmenu .opleiding1 a{
+            display:block;
+            font-family: var(--fonts);
+            font-weight: bold;
+            text-decoration: none;
+            color:#fff;
+            padding:10px;
+        }
 
-    .header .tabelnav .uitklapmenu .opleiding1{
-        display: none;
-        width:100%;
-        position: relative;
-        top: 0;
-        left: 0;
-        z-index: 99999;
-        padding:0;
-    }
+        .header .tabelnav .uitklapmenu .nieuws1{
+            display: none;
+            width:100%;
+            position: relative;
+            top: 0;
+            left: 0;
+            z-index: 99999;
+            padding:0;
+        }
 
-    .header .tabelnav .uitklapmenu .opleiding1 a{
-        display:block;
-        font-family: var(--fonts);
-        font-weight: bold;
-        text-decoration: none;
-        color:#fff;
-        padding:10px;
-    }
+        .header .tabelnav .uitklapmenu .nieuws1 a{
+            display:block;
+            font-family: var(--fonts);
+            font-weight: bold;
+            text-decoration: none;
+            color:#fff;
+            padding:10px;
+        }
 
-    .header .tabelnav .uitklapmenu .nieuws1{
-        display: none;
-        width:100%;
-        position: relative;
-        top: 0;
-        left: 0;
-        z-index: 99999;
-        padding:0;
-    }
+        .header .tabelnav .uitklapmenu .contact1{
+            display: none;
+            width:100%;
+            position: relative;
+            top: 0;
+            left: 0;
+            z-index: 99999;
+            padding:0;
+        }
 
-    .header .tabelnav .uitklapmenu .nieuws1 a{
-        display:block;
-        font-family: var(--fonts);
-        font-weight: bold;
-        text-decoration: none;
-        color:#fff;
-        padding:10px;
-    }
-
-    .header .tabelnav .uitklapmenu .contact1{
-        display: none;
-        width:100%;
-        position: relative;
-        top: 0;
-        left: 0;
-        z-index: 99999;
-        padding:0;
-    }
-
-    .header .tabelnav .uitklapmenu .contact1 a{
-        display:block;
-        font-family: var(--fonts);
-        font-weight: bold;
-        text-decoration: none;
-        color:#fff;
-        padding:10px;
-    }
+        .header .tabelnav .uitklapmenu .contact1 a{
+            display:block;
+            font-family: var(--fonts);
+            font-weight: bold;
+            text-decoration: none;
+            color:#fff;
+            padding:10px;
+        }
 
 }

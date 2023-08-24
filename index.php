@@ -26,35 +26,25 @@
 <body>
     
     <div class ="site-wrapper">
-        <div class ="site-content">    
-            <div class="grid-container">
-                <div class="columntext">
+        <div class ="site-content"> 
+            <div class = "plainText">   
+                <?php
+                    if (have_posts()) :
+                        while (have_posts()) : the_post();
+                ?>
+                            <article class = "tekst" <?php post_class(); ?>>
+                                <h2><?php the_title(); ?></h2>
+                                <div class="post-content">
+                                    <?php the_content(); ?>
+                                </div>
+                            </article>
                     <?php
-                        if (have_posts()) :
-                            while (have_posts()) : the_post();
+                        endwhile;
+                    else :
+                        echo '<p>Geen berichten gevonden.</p>';
+                    endif;
                     ?>
-                                <article class = "tekst" <?php post_class(); ?>>
-                                    <h2><?php the_title(); ?></h2>
-                                    <div class="post-content">
-                                        <?php the_content(); ?>
-                                    </div>
-                                </article>
-                        <?php
-                            endwhile;
-                        else :
-                            echo '<p>Geen berichten gevonden.</p>';
-                        endif;
-                        ?>
-                </div>
-                <div class="columnsb">
-                    <div class = "schaling">
-                        <div class="sidebar1 sidebarcolor">
-                            <?php dynamic_sidebar('sidebar-1'); ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-                        
+            </div>  
         </div>
         <?php
         get_footer();

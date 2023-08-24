@@ -2,8 +2,10 @@
 Theme name: vioswebsite
 Text Domain: vios-mijdrecht
 Version: 1.0
-Description: Nieuwe website
+Description: Muziekvereniging VIOS Mijdrecht
+Keywords: Muzievereniging, VIOS Mijdrecht, taptoe, dweilorkest, twirlen, orkest, muziek
 Author: Sophia de Waard
+Contributor: Jens Meeuwis
 */
 
 :root{
@@ -53,6 +55,12 @@ h1 {
     padding: 0;
     box-sizing: border-box;
     width: auto;
+    font-family: var(--fonts);
+}
+
+.plainText {
+    margin:40px;
+    box-shadow: 3px #000;
 }
 
 .sitecolorsmb {

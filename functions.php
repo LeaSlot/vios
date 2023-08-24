@@ -14,7 +14,6 @@
             wp_enqueue_style('viostest-stylefooter', get_template_directory_uri(). "/stylefooter.css", array(), 1.0, 'all');
             wp_enqueue_style('viostest-stylesidebar', get_template_directory_uri(). "/stylesidebar.css", array(), 1.0, 'all');
             wp_enqueue_style('viostest-stylefrontpage', get_template_directory_uri(). "/stylefrontpage.css", array(), 1.0, 'all');
-            wp_enqueue_style('viostest-stylegalerij', get_template_directory_uri(). "/stylegalerij.css", array(), 1.0, 'all');
             wp_enqueue_style('viostest-stylenieuws', get_template_directory_uri(). "/stylenieuws.css", array(), 1.0, 'all');
         }
         add_action('wp_enqueue_scripts', 'viostest_register_styles');
@@ -25,7 +24,6 @@
             $locations=array(
                 'afdelingen' => "Hoofdmenu afdelingen",
                 'opleidingen' => "Hoofdmenu opleidingen",
-                'galerij' => "Hoofdmenu gallerij",
                 'nieuws' => "Hoofdmenu nieuws",
                 'contact' => "Hoofdmenu contact",
                 'footer' => "Footer menu items"
@@ -222,39 +220,7 @@
         
         add_action('init', 'custom_album_taxonomy');
         
-    //Zorgt voor de shortcode  lastest_smb_post om berichten op te halen met smb slug
-        function custom_latest_smb_post() {
-            $args = array(
-                'post_type' => 'post',
-                'posts_per_page' => 1,
-                'category_name' => 'smb',
-                'orderby' => 'date',
-                'order' => 'DESC'
-            );
-        
-            $query = new WP_Query($args);
-        
-            if ($query->have_posts()) {
-                while ($query->have_posts()) {
-                    $query->the_post();
-                    echo '<div class="latest-post">';
-                    echo '<a href="' . get_permalink() . '" class="post-titel">' . get_the_title() . '</a>';
-                    $aantalwoorden = wp_trim_words(get_the_excerpt(), 20);
-                    echo '<div class="post-content">' . $aantalwoorden . '</div>';
-                    echo '<a href="' . get_permalink() . '" class="read-more">Lees meer</a>';
-                    echo '</div>';
-                }
-            }
-        
-            wp_reset_postdata();
-        }
-        
-        function custom_latest_smb_post_shortcode() {
-            ob_start();
-            custom_latest_smb_post();
-            return ob_get_clean();
-        }
-        add_shortcode('latest_smb_post', 'custom_latest_smb_post_shortcode');
+    
 
     //Zorgt voor de shortcode smb_post om alle berichten op te halen met smb slug
         function custom_smb_post() {
@@ -313,39 +279,7 @@
         add_shortcode('smb_berichten', 'custom_smb_post_shortcode');
     
     
-    //Zorgt voor de shortcode om berichten op te halen met dorst slug
-        function custom_latest_dorst_post() {
-            $args = array(
-                'post_type' => 'post',
-                'posts_per_page' => 1,
-                'category_name' => 'dorst',
-                'orderby' => 'date',
-                'order' => 'DESC'
-            );
-        
-            $query = new WP_Query($args);
-        
-            if ($query->have_posts()) {
-                while ($query->have_posts()) {
-                    $query->the_post();
-                    echo '<div class="latest-post">';
-                    echo '<a href="' . get_permalink() . '" class="post-titel">' . get_the_title() . '</a>';
-                    $aantalwoorden = wp_trim_words(get_the_excerpt(), 20);
-                    echo '<div class="post-content">' . $aantalwoorden . '</div>';
-                    echo '<a href="' . get_permalink() . '" class="read-more">Lees meer</a>';
-                    echo '</div>';
-                }
-            }
-        
-            wp_reset_postdata();
-        }
-        
-        function custom_latest_dorst_post_shortcode() {
-            ob_start();
-            custom_latest_dorst_post();
-            return ob_get_clean();
-        }
-        add_shortcode('latest_dorst_post', 'custom_latest_dorst_post_shortcode');
+   
 
 
     //Zorgt voor de shortcode dorst_post om alle berichten op te halen met dorst slug
@@ -404,39 +338,6 @@
         }
         add_shortcode('dorst_berichten', 'custom_dorst_post_shortcode');
         
-    //Zorgt voor de shortcode om berichten op te halen met twirlpower slug
-        function custom_latest_twirlpower_post() {
-            $args = array(
-                'post_type' => 'post',
-                'posts_per_page' => 1,
-                'category_name' => 'twirlpower',
-                'orderby' => 'date',
-                'order' => 'DESC'
-            );
-        
-            $query = new WP_Query($args);
-        
-            if ($query->have_posts()) {
-                while ($query->have_posts()) {
-                    $query->the_post();
-                    echo '<div class="latest-post">';
-                    echo '<a href="' . get_permalink() . '" class="post-titel">' . get_the_title() . '</a>';
-                    $aantalwoorden = wp_trim_words(get_the_excerpt(), 20);
-                    echo '<div class="post-content">' . $aantalwoorden . '</div>';
-                    echo '<a href="' . get_permalink() . '" class="read-more">Lees meer</a>';
-                    echo '</div>';
-                }
-            }
-        
-            wp_reset_postdata();
-        }
-        
-        function custom_latest_twirlpower_post_shortcode() {
-            ob_start();
-            custom_latest_twirlpower_post();
-            return ob_get_clean();
-        }
-        add_shortcode('latest_twirlpower_post', 'custom_latest_twirlpower_post_shortcode');
 
     //Zorgt voor de shortcode twirlpower_post om alle berichten op te halen met twirlpower slug
         function custom_twirlpower_post() {
@@ -496,39 +397,7 @@
 
 
         
-    //Zorgt voor de shortcode om berichten op te halen met abc slug
-        function custom_latest_abc_post() {
-            $args = array(
-                'post_type' => 'post',
-                'posts_per_page' => 1,
-                'category_name' => 'abc',
-                'orderby' => 'date',
-                'order' => 'DESC'
-            );
-        
-            $query = new WP_Query($args);
-        
-            if ($query->have_posts()) {
-                while ($query->have_posts()) {
-                    $query->the_post();
-                    echo '<div class="latest-post">';
-                    echo '<a href="' . get_permalink() . '" class="post-titel">' . get_the_title() . '</a>';
-                    $aantalwoorden = wp_trim_words(get_the_excerpt(), 20);
-                    echo '<div class="post-content">' . $aantalwoorden . '</div>';
-                    echo '<a href="' . get_permalink() . '" class="read-more">Lees meer</a>';
-                    echo '</div>';
-                }
-            }
-        
-            wp_reset_postdata();
-        }
-        
-        function custom_latest_abc_post_shortcode() {
-            ob_start();
-            custom_latest_abc_post();
-            return ob_get_clean();
-        }
-        add_shortcode('latest_abc_post', 'custom_latest_abc_post_shortcode');
+    
     
     //Zorgt voor de shortcode abc_post om alle berichten op te halen met abc slug
         function custom_abc_post() {
@@ -587,39 +456,7 @@
         add_shortcode('abc_berichten', 'custom_abc_post_shortcode');
 
 
-    //Zorgt voor de shortcode om berichten op te halen met mpb slug
-        function custom_latest_mpb_post() {
-            $args = array(
-                'post_type' => 'post',
-                'posts_per_page' => 1,
-                'category_name' => 'mpb',
-                'orderby' => 'date',
-                'order' => 'DESC'
-            );
-        
-            $query = new WP_Query($args);
-        
-            if ($query->have_posts()) {
-                while ($query->have_posts()) {
-                    $query->the_post();
-                    echo '<div class="latest-post">';
-                    echo '<a href="' . get_permalink() . '" class="post-titel">' . get_the_title() . '</a>';
-                    $aantalwoorden = wp_trim_words(get_the_excerpt(), 20);
-                    echo '<div class="post-content">' . $aantalwoorden . '</div>';
-                    echo '<a href="' . get_permalink() . '" class="read-more">Lees meer</a>';
-                    echo '</div>';
-                }
-            }
-        
-            wp_reset_postdata();
-        }
-        
-        function custom_latest_mpb_post_shortcode() {
-            ob_start();
-            custom_latest_mpb_post();
-            return ob_get_clean();
-        }
-        add_shortcode('latest_mpb_post', 'custom_latest_mpb_post_shortcode');
+
 
     //Zorgt voor de shortcode mpb_post om alle berichten op te halen met mpb slug
         function custom_mpb_post() {
@@ -677,39 +514,7 @@
         }
         add_shortcode('mpb_berichten', 'custom_mpb_post_shortcode');
         
-    //Zorgt voor de shortcode om berichten op te halen met wwb slug
-        function custom_latest_wwb_post() {
-            $args = array(
-                'post_type' => 'post',
-                'posts_per_page' => 1,
-                'category_name' => 'wwb',
-                'orderby' => 'date',
-                'order' => 'DESC'
-            );
-        
-            $query = new WP_Query($args);
-        
-            if ($query->have_posts()) {
-                while ($query->have_posts()) {
-                    $query->the_post();
-                    echo '<div class="latest-post">';
-                    echo '<a href="' . get_permalink() . '" class="post-titel">' . get_the_title() . '</a>';
-                    $aantalwoorden = wp_trim_words(get_the_excerpt(), 20);
-                    echo '<div class="post-content">' . $aantalwoorden . '</div>';
-                    echo '<a href="' . get_permalink() . '" class="read-more">Lees meer</a>';
-                    echo '</div>';
-                }
-            }
-        
-            wp_reset_postdata();
-        }
-        
-        function custom_latest_wwb_post_shortcode() {
-            ob_start();
-            custom_latest_wwb_post();
-            return ob_get_clean();
-        }
-        add_shortcode('latest_wwb_post', 'custom_latest_wwb_post_shortcode');
+    
 
     //Zorgt voor de shortcode wwb_post om alle berichten op te halen met wwb slug
         function custom_wwb_post() {
