@@ -7,26 +7,6 @@ Template Name: nieuws
 get_header();
 ?>
 
-
-<script>
-    window.addEventListener('resize', function() {
-        const innerDiv = document.getElementsByClassName("sidebar1");
-        const outerDiv = document.getElementsByClassName('columnsb');
-        const midDiv = document.getElementsByClassName('schaling');
-        if (window.innerWidth >= 650) {
-            outerDiv[0].style.height = '';
-            innerDiv[0].style.width = '';
-        }
-        else if (window.innerWidth <= 650) {
-
-            // Pas de stijl van de buitenste div aan op basis van de hoogte van de binnenste div
-            outerDiv[0].style.height = innerDiv[0].clientHeight + 'px';
-            innerDiv[0].style.width = midDiv[0].clientWidth + 'px';
-            console.log('in if else');
-        }
-    });
-</script>
-
 </head>
 
 <body>
@@ -59,13 +39,6 @@ get_header();
     </div>
 
     <script>
-        if (window.innerWidth <= 650) {
-            const innerDiv = document.getElementsByClassName("sidebar1");
-            const outerDiv = document.getElementsByClassName('columnsb');
-            const midDiv = document.getElementsByClassName('schaling');
-            // Pas de stijl van de buitenste div aan op basis van de hoogte van de binnenste div
-            outerDiv[0].style.height = innerDiv[0].clientHeight + 'px';
-            innerDiv[0].style.width = midDiv[0].clientWidth + 'px';
-        };
+        var readMore = document.getElemtn
     </script>
 </body>

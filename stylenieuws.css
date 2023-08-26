@@ -16,7 +16,7 @@
 }
 
 .tekst .post-content .all-post a.post-title:hover {
-    color:var(--rood);
+    text-decoration-line: underline;
 }
 
 .all-post {
@@ -83,7 +83,7 @@
 }
 
 .all-post .read-more:hover{
-    color: var(--rood);
+    text-decoration-line: underline;
 }
 
 .pagination {
@@ -94,8 +94,11 @@
 
 .pagination span {
     padding:5px;
-    color:var(--rood);
     font-weight: bold;
+}
+
+.pagination a.page-numbers:hover {
+    text-decoration-line: underline;
 }
 
 .pagination a{

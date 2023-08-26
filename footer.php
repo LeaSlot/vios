@@ -134,9 +134,7 @@
         }
 
         function setCarouselWidth(element) {
-            console.log(element)
             element.style.width = window.innerWidth/visibleItems-1 +'px';
-            console.log(element.style.width)
         }
 
         function updateItemWidth() {

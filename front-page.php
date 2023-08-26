@@ -19,6 +19,28 @@
                 console.log('in if else');
             }
         });
+
+        function smbopenen() {
+            window.open("viostest/show-en-marchingband-vios/","_self")
+        }
+        function dorstopenen() {
+            window.open("viostest/dweilorkest-dorst/","_self")
+        }
+        function twirlpoweropenen() {
+            window.open("viostest/twirlpower/","_self")
+        }
+        function abcopenen() {
+            window.open("viostest/amstelblazers-collectief/","_self")
+        }
+        function mpbopenen() {
+            window.open("viostest/muziekpietenbende/","_self")
+        }
+        function wwbopenen() {
+            window.open("viostest/winterwonderband/","_self")
+        }
+        function agendaopenen() {
+            window.open("viostest/agenda/","_self")
+        }
     </script>
     
 </head>
@@ -33,18 +55,18 @@
                     <div class ="row">
                         <div class="grid-container1">
                             <div class="column1">
-                                <div class="logos logossmb">
+                                <div class="logos logossmb" onclick="smbopenen()">
                                     <?php dynamic_sidebar('smb'); ?>
                                 </div>
 
                             </div>
                             <div class="column1">
-                                <div class="logos logosdorst">
+                                <div class="logos logosdorst" onclick="dorstopenen()">
                                     <?php dynamic_sidebar('dorst'); ?>
                                 </div>
                             </div>
                             <div class="column1">
-                                <div class="logos logostwirlpower">
+                                <div class="logos logostwirlpower" onclick="twirlpoweropenen()">
                                     <?php dynamic_sidebar('twirlpower'); ?>
                                 </div>
                             </div>
@@ -53,18 +75,18 @@
                     <div class="row">
                         <div class="grid-container1">
                             <div class="column1">
-                                <div class="logos logosabc">
+                                <div class="logos logosabc" onclick="abcopenen()">
                                     <?php dynamic_sidebar('abc'); ?>
                                 </div>
 
                             </div>
                             <div class="column1">
-                                <div class="logos logosmpb">
+                                <div class="logos logosmpb" onclick="mpbopenen()">
                                     <?php dynamic_sidebar('mpb'); ?>
                                 </div>
                             </div>
                             <div class="column1">
-                                <div class="logos logoswwb">
+                                <div class="logos logoswwb" onclick="wwbopenen()">
                                     <?php dynamic_sidebar('wwb'); ?>
                                 </div>
                             </div>
@@ -75,13 +97,13 @@
                     <div class ="row2">
                         <div class="grid-container2">
                             <div class="column1">
-                                <div class="logos logossmb">
+                                <div class="logos logossmb" onclick="smbopenen()">
                                     <?php dynamic_sidebar('smb'); ?>
                                 </div>
 
                             </div>
                             <div class="column1">
-                                <div class="logos logosdorst">
+                                <div class="logos logosdorst" onclick="dorstopenen()">
                                     <?php dynamic_sidebar('dorst'); ?>
                                 </div>
                             </div>
@@ -90,13 +112,13 @@
                     <div class ="row2">
                         <div class="grid-container2">
                             <div class="column1">
-                                <div class="logos logostwirlpower">
+                                <div class="logos logostwirlpower" onclick="twirlpoweropenen()">
                                     <?php dynamic_sidebar('twirlpower'); ?>
                                 </div>
 
                             </div>
                             <div class="column1">
-                                <div class="logos logosabc">
+                                <div class="logos logosabc" onclick="abcopenen()">
                                     <?php dynamic_sidebar('abc'); ?>
                                 </div>
                             </div>
@@ -105,13 +127,13 @@
                     <div class ="row2">
                         <div class="grid-container2">
                             <div class="column1">
-                                <div class="logos logosmpb">
+                                <div class="logos logosmpb" onclick="mpbopenen()">
                                     <?php dynamic_sidebar('mpb'); ?>
                                 </div>
 
                             </div>
                             <div class="column1">
-                                <div class="logos logoswwb">
+                                <div class="logos logoswwb" onclick="wwbopenen()">
                                     <?php dynamic_sidebar('wwb'); ?>
                                 </div>
                             </div>
@@ -121,7 +143,7 @@
                 </div>
                 <div class="columnsb">
                     <div class = "schaling">
-                        <div class="sidebar1 sidebarcolor">
+                        <div class="sidebar1 sidebarcolor" onclick="agendaopenen()">
                             <?php dynamic_sidebar('sidebar-1'); ?>
                         </div>
                     </div>

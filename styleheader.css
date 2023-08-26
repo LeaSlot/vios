@@ -63,7 +63,7 @@
         .header .tabellogo{
             position: absolute;
             margin: 25px;
-            box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.2);
+            box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.4);
         }
 
     /*Afwezigheid hamburgericoon op groot scherm*/

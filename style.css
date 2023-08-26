@@ -39,11 +39,6 @@ body {
     width: 100%;
 }
 
-h1 {
-    font-family: var(--fonts);
-    padding:40px;
-}
-
 .site-wrapper {
     display: flex;
     flex-direction: column;
@@ -56,6 +51,7 @@ h1 {
     box-sizing: border-box;
     width: auto;
     font-family: var(--fonts);
+    margin-top:100px;
 }
 
 .plainText {
@@ -95,63 +91,9 @@ h1 {
     background: var(--blauw);
 }
 
-.grid-container {
-    left:0;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-gap: 10px; 
-    border:none;
+h1 {
     font-family: var(--fonts);
-    grid-template-rows: auto;
-    padding-bottom: 40px;
-
-}
-
-.column {
-    margin-top:40px;
-    margin-left:40px;
-    display: flex;
-    padding: 0;
-    justify-content: center;
-    flex-direction: column;
-    padding-right:20px;
-}
-
-.columntext {
-    margin-top:40px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 60px;
-}
-
-.columnsb {
-    margin-top: 40px;
-    display: flex;
-    padding:0;
-    padding-left:20px;
-    justify-content: center;
-    flex-direction: column;
-    min-height: auto;
-}
-
-.schaling {
-    width: 100%;
-    height: 100%;
-    min-height: auto;
-}
-
-.sidebar1 {
-    box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.2);
-    height: fit-content;
-    position: absolute;
-    margin-right: 40px;
-    background: #fff;
-}
-
-.sidebarcolor {
-    background: linear-gradient(to bottom, #fff 50%, var(--lichtblauw));
+    padding:40px;
 }
 
 .tekst {
@@ -162,69 +104,4 @@ h1 {
 
 .agenda{
     font-family: var(--fonts);
-}
-
-
-
-
-@media screen and ( min-width: 1075px) {
-    .site-content {
-        margin-top: 100px;
-    }
-}
-
-@media screen and ( max-width: 1075px) {
-    .site-content {
-        margin-top:70px;
-    }
-}
-
-@media screen and (max-width: 650px) {
-    .grid-container {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .sidebar1 {
-        box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
-        height: fit-content;
-        position: absolute;
-        margin-right: 0px;
-        background: #fff;        
-    }
-
-    .column {
-        margin-top:40px;
-        margin-left:40px;
-        display: flex;
-        padding: 0;
-        justify-content: center;
-        flex-direction: column;
-        padding-right:0px;
-        margin-right: 40px;
-    }
-
-    .columntext {
-        margin-top:40px;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        padding: 0 40px;
-    
-    }
-
-    .columnsb {
-        display: flex;
-        padding:40px;
-        margin: 0px;
-        justify-content: center;
-        flex-direction: column;
-        min-height: auto;
-    }
-
-    .sidebarcolor {
-        background: linear-gradient(to bottom, var(--lichtrood) 0%, #fff 40%, #fff 60%, var(--lichtblauw)100%);
-    }
-    
-    
 }

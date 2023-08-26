@@ -33,7 +33,7 @@
 <div class ="site-wrapper">
         <div class ="site-content">    
             <div class="grid-container">
-                <div class="columntext">
+                <div class="column">
                     <?php
                         if (have_posts()) :
                             while (have_posts()) : the_post();
