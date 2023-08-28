@@ -18,7 +18,7 @@ get_header();
                 if (have_posts()) :
                     while (have_posts()) : the_post();
             ?>
-                        <article class = "tekst" <?php post_class(); ?>>
+                        <article class = "nieuws" <?php post_class(); ?>>
                             <h2><?php the_title(); ?></h2>
                             <div class="post-content">
                                 <?php the_content(); ?>
@@ -38,7 +38,4 @@ get_header();
         ?>
     </div>
 
-    <script>
-        var readMore = document.getElemtn
-    </script>
 </body>

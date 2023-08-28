@@ -96,10 +96,30 @@ h1 {
     padding:40px;
 }
 
+.socials {
+    display: flex;
+}
+
+.social {
+    height: 50px;
+    width: auto;
+    padding-right:12.5px;
+}
+
 .tekst {
     padding:20px;
-    background-color: #fff;
     box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.2);
+}
+
+.tekst img {
+    display: block;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nieuws {
+    padding:20px;
 }
 
 .agenda{

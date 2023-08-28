@@ -35,6 +35,7 @@
     box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.2);
     height: fit-content;
     display:flex;
+    flex-direction: column;
     background: #fff;
 }
 
@@ -88,5 +89,16 @@
 .widget-title1 {
     color:#000;
     text-decoration: none;
+}
+
+.afd {
+    cursor:default;
+}
+
+.afd img {
+    max-width: fit-content;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 

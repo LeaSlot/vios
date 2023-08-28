@@ -30,6 +30,32 @@
 
 <body>
 
+<?php
+        // Haal de huidige URL op
+        $current_url = esc_url( $_SERVER['REQUEST_URI'] );
+        if ( false !== strpos( $current_url, '/show-en-marchingband-vios/' ) ) {
+            $customId = 'sidebar-smb'; 
+        } 
+        else if ( false !== strpos( $current_url, '/dweilorkest-dorst/' ) ) {
+            $customId = 'sidebar-dorst'; 
+        } 
+        else if ( false !== strpos( $current_url, '/twirlpower/' ) ) {
+            $customId = 'sidebar-twirlpower'; 
+        } 
+        else if ( false !== strpos( $current_url, '/amstelblazers-collectief/' ) ) {
+            $customId = 'sidebar-abc'; 
+        } 
+        else if ( false !== strpos( $current_url, '/muziekpietenbende/' ) ) {
+            $customId = 'sidebar-mpb'; 
+        } 
+        else if ( false !== strpos( $current_url, '/winterwonderband/' ) ) {
+            $customId = 'sidebar-wwb'; 
+        } 
+        else {
+            $customId = 'sidebar-1';
+        };
+?>
+
 <div class ="site-wrapper">
         <div class ="site-content">    
             <div class="grid-container">
@@ -54,7 +80,7 @@
                 <div class="columnsb">
                     <div class = "schaling">
                         <div class="sidebar1">
-                            <?php dynamic_sidebar('sidebar-1'); ?>
+                            <?php dynamic_sidebar($customId); ?>
                         </div>
                     </div>
                 </div>
@@ -75,5 +101,13 @@
             outerDiv[0].style.height = innerDiv[0].clientHeight + 'px';
             innerDiv[0].style.width = midDiv[0].clientWidth + 'px';
         };
+
+        //de socials naast elkaar zetten
+        if (document.getElementsByClassName('socials').length >0){
+            
+            var socialsDiv = document.querySelector('.socials');
+            var groepDiv = socialsDiv.querySelector('div'); 
+            groepDiv.classList.add('socials');
+        }
     </script>
 </body>

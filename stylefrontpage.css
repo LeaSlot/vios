@@ -36,15 +36,24 @@
     width:100%
 }
 
-
 .row {
     padding-bottom: 20px;
+}
+
+.widget {
+    display: flex;
+    justify-content: center;
 }
 
 .logos{
     box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.2);
     width:100%; 
     cursor: pointer;
+}
+
+.logos img {
+    max-height: 200px;
+    width: auto;
 }
 
 .logossmb {

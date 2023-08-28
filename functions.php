@@ -135,6 +135,60 @@
                 'after_title' => '</h2>',
             ));
             register_sidebar(array(
+                'name' => __('Sidebarsmb', 'viostest1'),
+                'id' => 'sidebar-smb',
+                'description' => __('Dit is de rechter sidebar voor smb.', 'viostest1'),
+                'before_widget' => '<div class="widget1 afd">',
+                'after_widget' => '</div>',
+                'before_title' => '<h2 class="widget-title1">',
+                'after_title' => '</h2>',
+            ));
+            register_sidebar(array(
+                'name' => __('Sidebardorst', 'viostest1'),
+                'id' => 'sidebar-dorst',
+                'description' => __('Dit is de rechter sidebar voor dorst.', 'viostest1'),
+                'before_widget' => '<div class="widget1 afd">',
+                'after_widget' => '</div>',
+                'before_title' => '<h2 class="widget-title1">',
+                'after_title' => '</h2>',
+            ));
+            register_sidebar(array(
+                'name' => __('Sidebartwirlpower', 'viostest1'),
+                'id' => 'sidebar-twirlpower',
+                'description' => __('Dit is de rechter sidebar voor twirlpower.', 'viostest1'),
+                'before_widget' => '<div class="widget1 afd">',
+                'after_widget' => '</div>',
+                'before_title' => '<h2 class="widget-title1">',
+                'after_title' => '</h2>',
+            ));
+            register_sidebar(array(
+                'name' => __('Sidebarabc', 'viostest1'),
+                'id' => 'sidebar-abc',
+                'description' => __('Dit is de rechter sidebar voor abc.', 'viostest1'),
+                'before_widget' => '<div class="widget1 afd">',
+                'after_widget' => '</div>',
+                'before_title' => '<h2 class="widget-title1">',
+                'after_title' => '</h2>',
+            ));
+            register_sidebar(array(
+                'name' => __('Sidebarmpb', 'viostest1'),
+                'id' => 'sidebar-mpb',
+                'description' => __('Dit is de rechter sidebar voor mpb.', 'viostest1'),
+                'before_widget' => '<div class="widget1 afd">',
+                'after_widget' => '</div>',
+                'before_title' => '<h2 class="widget-title1">',
+                'after_title' => '</h2>',
+            ));
+            register_sidebar(array(
+                'name' => __('Sidebarwwb', 'viostest1'),
+                'id' => 'sidebar-wwb',
+                'description' => __('Dit is de rechter sidebar voor wwb.', 'viostest1'),
+                'before_widget' => '<div class="widget1 afd">',
+                'after_widget' => '</div>',
+                'before_title' => '<h2 class="widget-title1">',
+                'after_title' => '</h2>',
+            ));
+            register_sidebar(array(
                 'name' => __('SMB', 'viostest1'),
                 'id' => 'smb',
                 'description' => __('Dit is het linker widgetgebied voor logos.', 'viostest1'),
@@ -199,28 +253,6 @@
             ));
         }
         add_action('widgets_init', 'vios_register_sidebars');
-
-    // Maakt de albums binnen wordpress aan
-        function custom_album_taxonomy() {
-            $labels = array(
-                'name' => 'Albums',
-                'singular_name' => 'Album',
-                'menu_name' => 'Albums',
-                // Voeg andere labels toe zoals 'add_new_item', 'edit_item', etc.
-            );
-        
-            $args = array(
-                'labels' => $labels,
-                'hierarchical' => true,
-                // Voeg andere argumenten toe zoals 'rewrite', 'show_ui', etc.
-            );
-        
-            register_taxonomy('album', array('attachment'), $args);
-        }
-        
-        add_action('init', 'custom_album_taxonomy');
-        
-    
 
     //Zorgt voor de shortcode smb_post om alle berichten op te halen met smb slug
         function custom_smb_post() {
