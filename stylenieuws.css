@@ -7,7 +7,7 @@
     background:transparent;
 }
 
-.tekst .post-content .all-post .post-tekst a.post-title {
+.nieuws .post-content .all-post .post-tekst a.post-title {
     text-decoration: none;
     color:#000;
     font-weight: bold;
@@ -15,7 +15,7 @@
     display: block;
 }
 
-.tekst .post-content .all-post a.post-title:hover {
+.nieuws .post-content .all-post a.post-title:hover {
     text-decoration-line: underline;
 }
 

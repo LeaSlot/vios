@@ -1,18 +1,22 @@
-<?php
-/*
-Template Name: agenda
-*/
-get_header();
-?>
+<head>
+    <?php
+    /*
+    Template Name: agenda
+    */
+    get_header();
+    ?>
+</head>
 
-<body <?php body_class('agenda'); ?>>
+<body>
+
+
 
 <div class ="site-wrapper">
         <div class ="site-content">    
             <div class = "agenda">
                 <?php
-                    if (have_posts()) :
-                        while (have_posts()) : the_post();
+                    if (have_posts()) {
+                        while (have_posts()) { the_post();
                 ?>
                 <article class = "tekst" <?php post_class(); ?>>
                     <h2><?php the_title(); ?></h2>
@@ -21,10 +25,10 @@ get_header();
                     </div>
                 </article>
                 <?php
-                    endwhile;
-                else :
+                }}
+                else {
                     echo '<p>Geen berichten gevonden.</p>';
-                endif;
+                }
                 ?>
             </div>
                         

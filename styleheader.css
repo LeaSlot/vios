@@ -300,6 +300,10 @@
             box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.2);
         }
 
+        .header .tabellogo a {
+            height: 0px;
+        }
+
     /*Opmaak hamburgermenu icoon*/
         .header .tabelmobiel{
             float:left; 
