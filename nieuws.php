@@ -1,11 +1,11 @@
 <head>
 
-<?php
-/*
-Template Name: nieuws
-*/
-get_header();
-?>
+    <?php
+    /*
+    Template Name: nieuws
+    */
+    get_header();
+    ?>
 
 </head>
 

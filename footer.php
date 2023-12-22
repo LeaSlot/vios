@@ -69,7 +69,7 @@
         <div class="carousel">
             <?php
             $carousel_items = new WP_Query(array(
-                'post_type' => 'carousel_item', // Vervang met de naam van je aangepaste posttype
+                'post_type' => 'carousel_item', 
                 'posts_per_page' => -1,
             ));
 
@@ -153,7 +153,7 @@
             carousel.style.transform = 'translateX(' + translateValue + 'px)';
         }
 
-        // Stel het juiste aantal zichtbare items in bij het laden van de pagina
+        // Stelt het juiste aantal zichtbare items in bij het laden van de pagina
             updateVisibleItems(); 
             carouselItems.forEach(setCarouselWidth)
             updateItemWidth();

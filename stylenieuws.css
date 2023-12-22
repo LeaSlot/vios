@@ -132,3 +132,22 @@
     .category-wwb {
         background: radial-gradient(ellipse at center, var(--wwbvol) 0%, transparent 90%);
     }
+
+    
+@media screen and (min-width: 1075px) {
+
+    .nieuws {
+        width: 1000px;
+        margin:auto;
+        margin-bottom:40px;
+        box-shadow: 3px #000;
+    }
+}
+
+@media screen and (max-width: 1075px) {
+
+    .nieuws {
+        margin: 0 40px 40px;
+        box-shadow: 3px #000;
+    }
+}

@@ -21,7 +21,6 @@
                 // Pas de stijl van de buitenste div aan op basis van de hoogte van de binnenste div
                 outerDiv[0].style.height = innerDiv[0].clientHeight + 'px';
                 innerDiv[0].style.width = midDiv[0].clientWidth + 'px';
-                console.log('in if else');
             }
         });
     </script>

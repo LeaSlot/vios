@@ -1,26 +1,38 @@
 <?php
-    function viostest_theme_support(){
+    function vios_theme_support(){
         //Add dynamic title tag support
         add_theme_support('title-tag');
         add_theme_support('custom-logo');
         add_theme_support('post-thumbnails');
         }   
-    add_action('after_setup_theme', 'viostest_theme_support');
+    add_action('after_setup_theme', 'vios_theme_support');
     
+    function themename_custom_logo_setup() {
+        $defaults = array(
+            'height'               => 100,
+            'width'                => 300,
+            'flex-height'          => true,
+            'flex-width'           => true,
+            'unlink-homepage-logo' => true, 
+        );
+        add_theme_support( 'custom-logo', $defaults );
+    }
+    add_action( 'after_setup_theme', 'themename_custom_logo_setup' );
+
     //Laadt de CSS
-        function viostest_register_styles(){
-            wp_enqueue_style('viostest-style', get_template_directory_uri(). "/style.css", array(), 1.0, 'all');
-            wp_enqueue_style('viostest-styleheader', get_template_directory_uri(). "/styleheader.css", array(), 1.0, 'all');
-            wp_enqueue_style('viostest-stylefooter', get_template_directory_uri(). "/stylefooter.css", array(), 1.0, 'all');
-            wp_enqueue_style('viostest-stylesidebar', get_template_directory_uri(). "/stylesidebar.css", array(), 1.0, 'all');
-            wp_enqueue_style('viostest-stylefrontpage', get_template_directory_uri(). "/stylefrontpage.css", array(), 1.0, 'all');
-            wp_enqueue_style('viostest-stylenieuws', get_template_directory_uri(). "/stylenieuws.css", array(), 1.0, 'all');
+        function vios_register_styles(){
+            wp_enqueue_style('vios-style', get_template_directory_uri(). "/style.css", array(), 1.0, 'all');
+            wp_enqueue_style('vios-styleheader', get_template_directory_uri(). "/styleheader.css", array(), 1.0, 'all');
+            wp_enqueue_style('vios-stylefooter', get_template_directory_uri(). "/stylefooter.css", array(), 1.0, 'all');
+            wp_enqueue_style('vios-stylesidebar', get_template_directory_uri(). "/stylesidebar.css", array(), 1.0, 'all');
+            wp_enqueue_style('vios-stylefrontpage', get_template_directory_uri(). "/stylefrontpage.css", array(), 1.0, 'all');
+            wp_enqueue_style('vios-stylenieuws', get_template_directory_uri(). "/stylenieuws.css", array(), 1.0, 'all');
         }
-        add_action('wp_enqueue_scripts', 'viostest_register_styles');
+        add_action('wp_enqueue_scripts', 'vios_register_styles');
 
 
     //Laad je menus maken in wordpress zelf
-        function viostest_menus(){
+        function vios_menus(){
             $locations=array(
                 'afdelingen' => "Hoofdmenu afdelingen",
                 'opleidingen' => "Hoofdmenu opleidingen",
@@ -30,7 +42,7 @@
             );
             register_nav_menus($locations);
         }
-        add_action('init', 'viostest_menus');
+        add_action('init', 'vios_menus');
 
         
 
@@ -126,126 +138,126 @@
     //Maakt de widgetgebieden
         function vios_register_sidebars() {
             register_sidebar(array(
-                'name' => __('Sidebar', 'viostest1'),
+                'name' => __('Sidebar', 'vios1'),
                 'id' => 'sidebar-1',
-                'description' => __('Dit is de rechter sidebar.', 'viostest1'),
+                'description' => __('Dit is de rechter sidebar.', 'vios1'),
                 'before_widget' => '<div class="widget1">',
                 'after_widget' => '</div>',
                 'before_title' => '<h2 class="widget-title1">',
                 'after_title' => '</h2>',
             ));
             register_sidebar(array(
-                'name' => __('Sidebarsmb', 'viostest1'),
+                'name' => __('Sidebarsmb', 'vios1'),
                 'id' => 'sidebar-smb',
-                'description' => __('Dit is de rechter sidebar voor smb.', 'viostest1'),
+                'description' => __('Dit is de rechter sidebar voor smb.', 'vios1'),
                 'before_widget' => '<div class="widget1 afd">',
                 'after_widget' => '</div>',
                 'before_title' => '<h2 class="widget-title1">',
                 'after_title' => '</h2>',
             ));
             register_sidebar(array(
-                'name' => __('Sidebardorst', 'viostest1'),
+                'name' => __('Sidebardorst', 'vios1'),
                 'id' => 'sidebar-dorst',
-                'description' => __('Dit is de rechter sidebar voor dorst.', 'viostest1'),
+                'description' => __('Dit is de rechter sidebar voor dorst.', 'vios1'),
                 'before_widget' => '<div class="widget1 afd">',
                 'after_widget' => '</div>',
                 'before_title' => '<h2 class="widget-title1">',
                 'after_title' => '</h2>',
             ));
             register_sidebar(array(
-                'name' => __('Sidebartwirlpower', 'viostest1'),
+                'name' => __('Sidebartwirlpower', 'vios1'),
                 'id' => 'sidebar-twirlpower',
-                'description' => __('Dit is de rechter sidebar voor twirlpower.', 'viostest1'),
+                'description' => __('Dit is de rechter sidebar voor twirlpower.', 'vios1'),
                 'before_widget' => '<div class="widget1 afd">',
                 'after_widget' => '</div>',
                 'before_title' => '<h2 class="widget-title1">',
                 'after_title' => '</h2>',
             ));
             register_sidebar(array(
-                'name' => __('Sidebarabc', 'viostest1'),
+                'name' => __('Sidebarabc', 'vios1'),
                 'id' => 'sidebar-abc',
-                'description' => __('Dit is de rechter sidebar voor abc.', 'viostest1'),
+                'description' => __('Dit is de rechter sidebar voor abc.', 'vios1'),
                 'before_widget' => '<div class="widget1 afd">',
                 'after_widget' => '</div>',
                 'before_title' => '<h2 class="widget-title1">',
                 'after_title' => '</h2>',
             ));
             register_sidebar(array(
-                'name' => __('Sidebarmpb', 'viostest1'),
+                'name' => __('Sidebarmpb', 'vios1'),
                 'id' => 'sidebar-mpb',
-                'description' => __('Dit is de rechter sidebar voor mpb.', 'viostest1'),
+                'description' => __('Dit is de rechter sidebar voor mpb.', 'vios1'),
                 'before_widget' => '<div class="widget1 afd">',
                 'after_widget' => '</div>',
                 'before_title' => '<h2 class="widget-title1">',
                 'after_title' => '</h2>',
             ));
             register_sidebar(array(
-                'name' => __('Sidebarwwb', 'viostest1'),
+                'name' => __('Sidebarwwb', 'vios1'),
                 'id' => 'sidebar-wwb',
-                'description' => __('Dit is de rechter sidebar voor wwb.', 'viostest1'),
+                'description' => __('Dit is de rechter sidebar voor wwb.', 'vios1'),
                 'before_widget' => '<div class="widget1 afd">',
                 'after_widget' => '</div>',
                 'before_title' => '<h2 class="widget-title1">',
                 'after_title' => '</h2>',
             ));
             register_sidebar(array(
-                'name' => __('SMB', 'viostest1'),
+                'name' => __('SMB', 'vios1'),
                 'id' => 'smb',
-                'description' => __('Dit is het linker widgetgebied voor logos.', 'viostest1'),
+                'description' => __('Dit is het linker widgetgebied voor logos.', 'vios1'),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
                 'before_title' => '<h2 class="widget-title">',
                 'after_title' => '</h2>',
             ));
             register_sidebar(array(
-                'name' => __('Dorst', 'viostest1'),
+                'name' => __('Dorst', 'vios1'),
                 'id' => 'dorst',
-                'description' => __('Dit is het middelste widgetgebied voor logos.', 'viostest1'),
+                'description' => __('Dit is het middelste widgetgebied voor logos.', 'vios1'),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
                 'before_title' => '<h2 class="widget-title">',
                 'after_title' => '</h2>',
             ));
             register_sidebar(array(
-                'name' => __('TwirlPower', 'viostest1'),
+                'name' => __('TwirlPower', 'vios1'),
                 'id' => 'twirlpower',
-                'description' => __('Dit is het rechter widgetgebied voor logos.', 'viostest1'),
+                'description' => __('Dit is het rechter widgetgebied voor logos.', 'vios1'),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
                 'before_title' => '<h2 class="widget-title">',
                 'after_title' => '</h2>',
             ));
             register_sidebar(array(
-                'name' => __('ABC', 'viostest1'),
+                'name' => __('ABC', 'vios1'),
                 'id' => 'abc',
-                'description' => __('Dit is het rechter widgetgebied voor logos.', 'viostest1'),
+                'description' => __('Dit is het rechter widgetgebied voor logos.', 'vios1'),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
                 'before_title' => '<h2 class="widget-title">',
                 'after_title' => '</h2>',
             ));
             register_sidebar(array(
-                'name' => __('MPB', 'viostest1'),
+                'name' => __('MPB', 'vios1'),
                 'id' => 'mpb',
-                'description' => __('Dit is het rechter widgetgebied voor logos.', 'viostest1'),
+                'description' => __('Dit is het rechter widgetgebied voor logos.', 'vios1'),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
                 'before_title' => '<h2 class="widget-title">',
                 'after_title' => '</h2>',
             ));
             register_sidebar(array(
-                'name' => __('WWB', 'viostest1'),
+                'name' => __('WWB', 'vios1'),
                 'id' => 'wwb',
-                'description' => __('Dit is het rechter widgetgebied voor logos.', 'viostest1'),
+                'description' => __('Dit is het rechter widgetgebied voor logos.', 'vios1'),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
                 'before_title' => '<h2 class="widget-title">',
                 'after_title' => '</h2>',
             ));
             register_sidebar(array(
-                'name' => __('footer', 'viostest1'),
+                'name' => __('footer', 'vios1'),
                 'id' => 'sponsoren',
-                'description' => __('Dit widgetgebied voor de sponsoren.', 'viostest1'),
+                'description' => __('Dit widgetgebied voor de sponsoren.', 'vios1'),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
                 'before_title' => '<h2 class="widget-title">',

@@ -16,7 +16,6 @@
                 // Pas de stijl van de buitenste div aan op basis van de hoogte van de binnenste div
                 outerDiv[0].style.height = innerDiv[0].clientHeight + 'px';
                 innerDiv[0].style.width = midDiv[0].clientWidth + 'px';
-                console.log('in if else');
             }
         });
 
@@ -55,18 +54,18 @@
                     <div class ="row">
                         <div class="grid-container1">
                             <div class="column1">
-                                <div class="logos logossmb" onclick="smbopenen()">
+                                <div class="logos" onclick="smbopenen()">
                                     <?php dynamic_sidebar('smb'); ?>
                                 </div>
 
                             </div>
                             <div class="column1">
-                                <div class="logos logosdorst" onclick="dorstopenen()">
+                                <div class="logos" onclick="dorstopenen()">
                                     <?php dynamic_sidebar('dorst'); ?>
                                 </div>
                             </div>
                             <div class="column1">
-                                <div class="logos logostwirlpower" onclick="twirlpoweropenen()">
+                                <div class="logos" onclick="twirlpoweropenen()">
                                     <?php dynamic_sidebar('twirlpower'); ?>
                                 </div>
                             </div>
@@ -75,18 +74,18 @@
                     <div class="row">
                         <div class="grid-container1">
                             <div class="column1">
-                                <div class="logos logosabc" onclick="abcopenen()">
+                                <div class="logos" onclick="abcopenen()">
                                     <?php dynamic_sidebar('abc'); ?>
                                 </div>
 
                             </div>
                             <div class="column1">
-                                <div class="logos logosmpb" onclick="mpbopenen()">
+                                <div class="logos" onclick="mpbopenen()">
                                     <?php dynamic_sidebar('mpb'); ?>
                                 </div>
                             </div>
                             <div class="column1">
-                                <div class="logos logoswwb" onclick="wwbopenen()">
+                                <div class="logos" onclick="wwbopenen()">
                                     <?php dynamic_sidebar('wwb'); ?>
                                 </div>
                             </div>
@@ -97,13 +96,13 @@
                     <div class ="row2">
                         <div class="grid-container2">
                             <div class="column1">
-                                <div class="logos logossmb" onclick="smbopenen()">
+                                <div class="logos" onclick="smbopenen()">
                                     <?php dynamic_sidebar('smb'); ?>
                                 </div>
 
                             </div>
                             <div class="column1">
-                                <div class="logos logosdorst" onclick="dorstopenen()">
+                                <div class="logos" onclick="dorstopenen()">
                                     <?php dynamic_sidebar('dorst'); ?>
                                 </div>
                             </div>
@@ -112,13 +111,13 @@
                     <div class ="row2">
                         <div class="grid-container2">
                             <div class="column1">
-                                <div class="logos logostwirlpower" onclick="twirlpoweropenen()">
+                                <div class="logos" onclick="twirlpoweropenen()">
                                     <?php dynamic_sidebar('twirlpower'); ?>
                                 </div>
 
                             </div>
                             <div class="column1">
-                                <div class="logos logosabc" onclick="abcopenen()">
+                                <div class="logos" onclick="abcopenen()">
                                     <?php dynamic_sidebar('abc'); ?>
                                 </div>
                             </div>
@@ -127,13 +126,13 @@
                     <div class ="row2">
                         <div class="grid-container2">
                             <div class="column1">
-                                <div class="logos logosmpb" onclick="mpbopenen()">
+                                <div class="logos" onclick="mpbopenen()">
                                     <?php dynamic_sidebar('mpb'); ?>
                                 </div>
 
                             </div>
                             <div class="column1">
-                                <div class="logos logoswwb" onclick="wwbopenen()">
+                                <div class="logos" onclick="wwbopenen()">
                                     <?php dynamic_sidebar('wwb'); ?>
                                 </div>
                             </div>
